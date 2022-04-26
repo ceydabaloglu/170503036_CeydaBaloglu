@@ -1,16 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      >
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" />
-</VBox>
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="299.0" style="-fx-background-color: #ACE7FF;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="40.0" left="45.0" right="45.0" top="50.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../../../../../../../../Downloads/kisspng-india-travel-agent-air-travel-travel-website-statue-of-liberty-vector-earth-5a807fb2bcbf99.4342269715183707387731.png" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="46.0" prefWidth="299.0">
+               <VBox.margin>
+                  <Insets top="-40.0" />
+               </VBox.margin>
+               <children>
+                  <Text layoutX="45.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REİSEBÜRO" textAlignment="CENTER" wrappingWidth="208.03515625">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../Downloads/clipart1836253.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox prefHeight="400.0" prefWidth="301.0">
+         <children>
+            <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="43.0" prefWidth="301.0">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-color: 000;">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../../Downloads/pngwing.com%20(2).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="301.0">
+               <children>
+                  <Pane prefHeight="47.0" prefWidth="49.0">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="30.0" layoutX="10.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../../Downloads/user-icon-png-pnglogocom-133466.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <TextField prefHeight="35.0" prefWidth="184.0" promptText="Benutzername" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="301.0" style="-fx-background-color: 00;">
+               <children>
+                  <Pane prefHeight="45.0" prefWidth="49.0">
+                     <children>
+                        <ImageView fitHeight="43.0" fitWidth="49.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../../Desktop/password.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <TextField prefHeight="32.0" prefWidth="184.0" promptText="Passwort" />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="183.0" style="-fx-background-color: 000;" text="Anmeldung" textFill="#12697c">
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</HBox>

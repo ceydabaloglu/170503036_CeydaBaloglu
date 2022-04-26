@@ -12,7 +12,7 @@ public class main  extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hydra Kindergarten!");
+        stage.setTitle("TourSystem");
         stage.setScene(scene);
         stage.show();
         Database db = new Database();
