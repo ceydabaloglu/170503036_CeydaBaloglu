@@ -3,6 +3,8 @@ package com.example.ProjeINF202;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,8 +20,13 @@ public class main  extends Application {
         Database db = new Database();
         db.connect();
 
+
+
+
     }
     public static void main(String[] args) {
         launch();
     }
+
+
 }
