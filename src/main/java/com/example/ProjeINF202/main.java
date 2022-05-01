@@ -24,7 +24,11 @@ public class main  extends Application {
         stage.setScene(scene);
         stage.show();
         Database db = new Database();
+        //db.createDatabase();
         db.connect();
+        //db.createTourTable();
+        //db.createBuroPersonal();
+        //db.createKundeTable();
 
 
     }

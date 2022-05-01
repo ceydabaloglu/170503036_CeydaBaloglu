@@ -3,17 +3,13 @@ package com.example.ProjeINF202;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class homeController {
     private Stage stage;
@@ -21,34 +17,45 @@ public class homeController {
     private Parent root;
 
     @FXML
-    private Button btnBüropersonal;
+    private Button btnBüroPerson;
 
     @FXML
-    private Button btnITManager;
+    private Button btnKunden;
 
     @FXML
-    private Button btnKunde;
+    private Button btnTouren;
 
     @FXML
-    private ChoiceBox<String> btnInfo;
-
-    private String[] Aktionen = {"Add Kunde" , "Aktualisieren Kunde","Add BüroPersonal"};
-
+    private Pane paneview;
 
     @FXML
-    public void initialize() {
+    void onTourenClicked(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(TourController.class.getResource("Tourenview.fxml"));
+        if(paneview.getChildren() != null){
+            paneview.getChildren().remove(paneview.getChildren().get(0));
+        }
 
-        btnInfo.getItems().addAll(Aktionen);
+        paneview.getChildren().add(root);
+
     }
     @FXML
-    public void onbtnKundeClick (ActionEvent event) throws Exception {
-        root = FXMLLoader.load(kundeController.class.getResource("kundepage.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
+    void onKundenClicked(ActionEvent event) throws IOException {
+        FXMLLoader KundepageScreene = new FXMLLoader(KundeController.class.getResource("Kundepage.fxml"));
+        if(paneview.getChildren() != null){
+            paneview.getChildren().remove(paneview.getChildren().get(0));
+        }
 
+        paneview.getChildren().add(KundepageScreene.load());
+    }
+    @FXML
+    void onBüroClicked(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(BüroPersonController.class.getResource("BüroPersonpage.fxml"));
+        if(paneview.getChildren() != null){
+            paneview.getChildren().remove(paneview.getChildren().get(0));
+        }
+
+        paneview.getChildren().add(root);
+    }
 
 
 }
