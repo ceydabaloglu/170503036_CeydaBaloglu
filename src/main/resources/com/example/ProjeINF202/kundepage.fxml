@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="408.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ProjeINF202.kundeController">
+   <children>
+      <VBox prefHeight="85.0" prefWidth="408.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="41.0" prefWidth="373.0" style="-fx-background-color: EAAC8b EAAC8b;" text="Kunde Informationen" textFill="#a44a19">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="17.0" right="-30.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <TextField fx:id="tfVorname" layoutX="24.0" layoutY="86.0" promptText="Vorname" />
+      <TextField fx:id="tfNachname" layoutX="24.0" layoutY="131.0" promptText="Nachname" />
+      <TextField fx:id="tfTCnummer" layoutX="24.0" layoutY="177.0" promptText="Tc_nummer" />
+      <TextField fx:id="tfAdresse" layoutX="24.0" layoutY="226.0" promptText="Adresse" />
+      <TextField fx:id="tfEmail" layoutX="222.0" layoutY="86.0" promptText="Email" />
+      <TextField fx:id="tfTelnum" layoutX="222.0" layoutY="131.0" promptText="Telefon nummer" />
+      <TextField fx:id="tfAlter" layoutX="222.0" layoutY="177.0" promptText="Alter" />
+      <Button fx:id="btnAdd" layoutX="256.0" layoutY="309.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: EAAC8b EAAC8b EAAC8b EAAC8b;" text="Add" textFill="#a44a19">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
