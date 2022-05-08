@@ -1,16 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.ProjeINF202.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ProjeINF202.loginController">
+   <children>
+      <VBox opacity="0.81" prefHeight="400.0" prefWidth="299.0" style="-fx-background-color: #da7536 #da7536;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="40.0" left="45.0" right="45.0" top="50.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@images/travel.jpg" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="46.0" prefWidth="299.0">
+               <VBox.margin>
+                  <Insets top="-40.0" />
+               </VBox.margin>
+               <children>
+                  <Text fill="#9a1414" layoutX="45.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REİSEBÜRO" textAlignment="CENTER" wrappingWidth="208.03515625">
+                     <font>
+                        <Font name="Arial Bold" size="25.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <ImageView fitHeight="169.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/traveler.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox prefHeight="400.0" prefWidth="301.0">
+         <children>
+            <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="109.0" prefWidth="301.0">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-color: 000;">
+                     <graphic>
+                        <ImageView fx:id="btnClose" fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/close_page.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="301.0">
+               <children>
+                  <Pane prefHeight="47.0" prefWidth="49.0">
+                     <children>
+                        <ImageView fitHeight="35.0" fitWidth="38.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/user_icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <TextField fx:id="tfBenutzername" prefHeight="31.0" prefWidth="184.0" promptText="Benutzername">
+                     <cursor>
+                        <Cursor fx:constant="N_RESIZE" />
+                     </cursor>
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font></TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="301.0" style="-fx-background-color: 00;">
+               <children>
+                  <Pane prefHeight="45.0" prefWidth="49.0">
+                     <children>
+                        <ImageView fitHeight="35.0" fitWidth="38.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/password.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <PasswordField fx:id="pfPasswort" prefHeight="28.0" prefWidth="184.0" promptText="*****">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </PasswordField>
+               </children>
+            </HBox>
+            <Button fx:id="btnAnmeldung" mnemonicParsing="false" onAction="#onbtnAnmeldungClick" prefHeight="24.0" prefWidth="179.0" style="-fx-background-color: #f2b468;" text="Anmeldung" textFill="#a32f0a">
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Button>
+            <Pane prefHeight="158.0" prefWidth="301.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label fx:id="errorMessageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="13.0" prefHeight="35.0" prefWidth="167.0" textFill="#fc0000">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+         </children>
+      </VBox>
+   </children>
+</HBox>
