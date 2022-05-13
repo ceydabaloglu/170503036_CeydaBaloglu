@@ -29,7 +29,7 @@ public class OfficePersonal extends Person {
 
     public void setBenutzername(String benutzername) {
 
-        Benutzername = benutzername;
+        this.Benutzername = benutzername;
     }
 
     public void setPasswort(int passwort) {

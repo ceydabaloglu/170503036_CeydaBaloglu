@@ -11,7 +11,7 @@ public class Kunde extends Person {
 
     public void setKundennummer(int kundeno){
 
-        Kundennummer = kundeno;
+        this.Kundennummer = kundeno;
     }
     public int getKundennummer(){
 

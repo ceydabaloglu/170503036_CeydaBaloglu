@@ -24,18 +24,19 @@ public class Person {
     }
 
     public void setAll(int tc ,String ad, String n ,String v, int tel, String e , int al){
-        tc_no = tc_no;
-        Adress = ad;
-        Name = n;
-        Vorname = v;
-        Telefonnummer = tel;
-        Email = e;
-        Alter = al;
+        this.tc_no = tc_no;
+        this.Adress = ad;
+        this.Name = n;
+        this.Vorname = v;
+        this.Telefonnummer = tel;
+        this.Email = e;
+        this.Alter = al;
     }
     //name-vorname-adress lenght belirle
     //yaş sınırı ayarla
 
     public int gettc_no(){
+
         return tc_no;
     }
     public String getVorname(){

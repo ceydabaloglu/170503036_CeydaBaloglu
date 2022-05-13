@@ -1,17 +1,31 @@
 package com.example.ProjeINF202;
 
-import java.util.Date;
-
 public class TourInformationen  {
-
+    private int Id;
+    private String Tourname;
     private String Ort ;
     private String Hotels;
-    private Date Zeitraum;
+    private String Zeitraum;
     private int Kapazitat;
     private String Transportmittel;
     private int Preis;
     private String Tagesablauf;
 
+    public int getId(){
+        return Id;
+    }
+
+    public void setId(int id) {
+        this.Id = id;
+    }
+
+    public String getTourname(){
+        return Tourname;
+    }
+
+    public void setTourname(String tourname) {
+        this.Tourname = tourname;
+    }
 
     public String getOrt() {
 
@@ -20,7 +34,7 @@ public class TourInformationen  {
 
     public void setOrt(String ort) {
 
-        Ort = ort;
+        this.Ort = ort;
     }
 
     public String getHotels() {
@@ -30,17 +44,17 @@ public class TourInformationen  {
 
     public void setHotels(String hotels) {
 
-        Hotels = hotels;
+        this.Hotels = hotels;
     }
 
-    public Date getZeitraum() {
+    public String getZeitraum() {
 
         return Zeitraum;
     }
 
-    public void setZeitraum(Date zeitraum) {
+    public void setZeitraum(String zeitraum) {
 
-        Zeitraum = zeitraum;
+        this.Zeitraum = zeitraum;
     }
 
     public int getKapazitat() {
@@ -50,7 +64,7 @@ public class TourInformationen  {
 
     public void setKapazitat(int kapazitat) {
 
-        Kapazitat = kapazitat;
+        this.Kapazitat = kapazitat;
     }
 
     public String getTransportmittel() {
@@ -60,7 +74,7 @@ public class TourInformationen  {
 
     public void setTransportmittel(String transportmittel) {
 
-        Transportmittel = transportmittel;
+        this.Transportmittel = transportmittel;
     }
 
     public int getPreis() {
@@ -70,7 +84,7 @@ public class TourInformationen  {
 
     public void setPreis(int preis) {
 
-        Preis = preis;
+        this.Preis = preis;
     }
 
     public String getTagesablauf() {

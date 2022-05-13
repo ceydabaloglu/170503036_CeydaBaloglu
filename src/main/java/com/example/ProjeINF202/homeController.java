@@ -53,11 +53,9 @@ public class homeController {
         if(paneview.getChildren() != null){
             paneview.getChildren().remove(paneview.getChildren().get(0));
         }
-
         paneview.getChildren().add(root);
+
     }
-
-
 }
 
 

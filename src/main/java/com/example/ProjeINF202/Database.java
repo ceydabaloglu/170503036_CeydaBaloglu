@@ -1,6 +1,7 @@
 package com.example.ProjeINF202;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Database {
     public  static Connection conn = null;
@@ -41,6 +42,5 @@ public class Database {
         return false;
 
     }
-
 
 }
