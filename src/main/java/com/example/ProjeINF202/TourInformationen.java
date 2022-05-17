@@ -1,25 +1,49 @@
 package com.example.ProjeINF202;
 
 public class TourInformationen  {
-    private int Id;
+    public int Id;
     private String Tourname;
-    private String Ort ;
-    private String Hotels;
     private String Zeitraum;
     private int Kapazitat;
     private String Transportmittel;
     private int Preis;
     private String Tagesablauf;
+    private String Hotels ;
+    private String Ort;
+
+    public TourInformationen(int id,
+                             String tourname,
+                             String zeitraum,
+                             int kapazitat,
+                             String transportmittel,
+                             int preis,
+                             String tagesablauf,
+                             String hotels,
+                             String ort){
+        Id = id;
+        Tourname = tourname;
+        Zeitraum = zeitraum;
+        Kapazitat = kapazitat;
+        Transportmittel = transportmittel;
+        Preis = preis;
+        Tagesablauf = tagesablauf;
+        Ort = ort;
+        Hotels = hotels;
+
+    }
 
     public int getId(){
+
         return Id;
     }
 
     public void setId(int id) {
+
         this.Id = id;
     }
 
     public String getTourname(){
+
         return Tourname;
     }
 

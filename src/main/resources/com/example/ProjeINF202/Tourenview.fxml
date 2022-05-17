@@ -7,14 +7,13 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ProjeINF202.TourController">
    <children>
-      <ListView fx:id="Tourlist" layoutX="156.0" prefHeight="400.0" prefWidth="445.0" />
-      <Label alignment="CENTER" layoutX="-16.0" layoutY="52.0" prefHeight="33.0" prefWidth="179.0" text="Tour Listen" textFill="#da7536">
+      <ListView fx:id="Tourlist" layoutX="200.0" prefHeight="400.0" prefWidth="399.0" >
+         <Label fx:id="NameLabel" text=" " styleClass="Name"></Label>
+      </ListView>
+      <Label fx:id="labelTourListen" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="67.0" prefHeight="17.0" prefWidth="194.0" text="Tour List" textFill="#da7536">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="ıd" layoutX="190.0" layoutY="60.0" prefHeight="17.0" prefWidth="29.0" text="Id" />
-      <Label fx:id="tourname" layoutX="236.0" layoutY="60.0" prefHeight="17.0" prefWidth="74.0" text="Tourname" />
-      <Label fx:id="zeitraum" layoutX="322.0" layoutY="60.0" prefHeight="17.0" prefWidth="74.0" text="Zeitraum" />
    </children>
 </AnchorPane>
