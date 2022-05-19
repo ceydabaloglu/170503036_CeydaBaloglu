@@ -3,7 +3,7 @@ package com.example.ProjeINF202;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.ListCell;
 
-public class ListViewCell extends ListCell<TourInformationen> {
+/* public class ListViewCell extends ListCell<TourInformationen> {
     @Override
     public void updateItem(TourInformationen string, boolean empty)
     {
@@ -15,4 +15,4 @@ public class ListViewCell extends ListCell<TourInformationen> {
             setGraphic(data.getBox());
         }
     }
-}
+}*/

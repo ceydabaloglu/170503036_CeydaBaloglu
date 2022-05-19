@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
@@ -16,6 +17,8 @@ public class homeController {
     private Scene scene;
     private Parent root;
 
+    @FXML
+    private Pane paneview;
     @FXML
     private Button btnBüroPerson;
 
@@ -26,7 +29,9 @@ public class homeController {
     private Button btnTouren;
 
     @FXML
-    private Pane paneview;
+    private AnchorPane Achpaneview;
+
+
 
     @FXML
     void onTourenClicked(ActionEvent event) throws IOException {
