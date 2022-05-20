@@ -47,12 +47,14 @@ public class loginController  {
         public void onbtnAnmeldungClick(ActionEvent event) throws Exception{
 
             System.out.println(tfBenutzername.getText());
+
             if(Database.containBüropersonal(tfBenutzername.getText() , pfPasswort.getText())){
                 root = FXMLLoader.load(homeController.class.getResource("homepage.fxml"));
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+
             }else{
                 errorMessageLabel.setText("Falsche Eingabe!");
             }

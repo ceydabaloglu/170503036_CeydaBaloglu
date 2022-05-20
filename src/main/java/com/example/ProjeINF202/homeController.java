@@ -32,7 +32,6 @@ public class homeController {
     private AnchorPane Achpaneview;
 
 
-
     @FXML
     void onTourenClicked(ActionEvent event) throws IOException {
         root = FXMLLoader.load(TourController.class.getResource("Tourenview.fxml"));
@@ -49,7 +48,6 @@ public class homeController {
         if(paneview.getChildren() != null){
             paneview.getChildren().remove(paneview.getChildren().get(0));
         }
-
         paneview.getChildren().add(KundepageScreene.load());
     }
     @FXML

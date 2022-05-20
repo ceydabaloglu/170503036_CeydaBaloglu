@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -39,20 +40,33 @@ public class TourController implements Initializable {
 
     @FXML
     private Button nextbutton;
+
     @FXML
-    private ImageView bevor;
+    private Button AddTourButon;
 
 
-        @FXML
-        void onnextbuttonClicked(ActionEvent event) throws IOException {
-            root = FXMLLoader.load(KundeController.class.getResource("Kundepage.fxml"));
-            if(pane.getChildren() != null){
-                pane.getChildren().remove(pane.getChildren().get(0));
-            }
+    @FXML
+    void onaddTourbuttonClicked(ActionEvent event) {
 
-            pane.getChildren().add(root);
+    }
 
-        }
+
+    @FXML
+    void onbevorbuttonClicked(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(homeController.class.getResource("homepage.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
+    @FXML
+    void onnextbuttonClicked(ActionEvent event) {
+
+
+    }
+
 
 
 
