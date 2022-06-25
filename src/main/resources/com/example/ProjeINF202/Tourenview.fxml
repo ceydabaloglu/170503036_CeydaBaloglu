@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ProjeINF202.TourController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #da7536 #da7536;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ProjeINF202.TourController">
    <children>
       <ListView fx:id="Tourlist" layoutX="200.0" prefHeight="400.0" prefWidth="399.0">
          <Label fx:id="NameLabel" styleClass="Name" text=" " />
       </ListView>
-      <Label fx:id="labelTourListen" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="67.0" prefHeight="17.0" prefWidth="194.0" text="Tour List" textFill="#da7536">
+      <Label fx:id="labelTourListen" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="67.0" prefHeight="17.0" prefWidth="194.0" text="Tour List" textFill="#f5d9c8">
          <font>
-            <Font name="Arial Bold" size="18.0" />
+            <Font name="Arial Bold" size="29.0" />
          </font>
       </Label>
       <HBox layoutX="2.0" layoutY="235.0" prefHeight="97.0" prefWidth="194.0">
