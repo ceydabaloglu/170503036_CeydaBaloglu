@@ -12,11 +12,16 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AddTourController {
-
+public class AddKundeController {
         private Stage stage;
         private Scene scene;
         private Parent root;
+
+        @FXML
+        private TextField adresse_field;
+
+        @FXML
+        private TextField alter_field;
 
         @FXML
         private Button buttonsave;
@@ -25,50 +30,33 @@ public class AddTourController {
         private Button buttonzurueck;
 
         @FXML
-        private TextField hotel_field;
-
-        @FXML
-        private TextField kapazitat_field;
+        private TextField email_field;
 
         @FXML
         private TextField name_field;
 
         @FXML
-        private TextField ort_field;
+        private TextField tc_field;
 
         @FXML
-        private TextField preis_field;
+        private TextField telefonnummer_field;
 
         @FXML
-        private TextField tagesablauf_field;
+        private TextField vorname_field;
 
         @FXML
-        private TextField transport_field;
-
-        @FXML
-        private TextField zeitraum_field;
-
-        @FXML
-        private TextField ıd_field;
-
-
-        @FXML
-        void onbuttonsaveCliecked(ActionEvent event) {
+        void OnbuttonsaveCliecked(ActionEvent event) {
 
         }
 
         @FXML
-        void onbuttonzurueckCliecked(ActionEvent event) throws IOException {
-            root = FXMLLoader.load(TourController.class.getResource("Tourenview.fxml"));
+        void onbuttonZurueckClicked(ActionEvent event) throws IOException {
+            root = FXMLLoader.load(KundeController.class.getResource("Kundegae.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-
         }
 
 
-
-    }
-
-
+}

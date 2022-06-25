@@ -46,7 +46,12 @@ public class TourController implements Initializable {
 
 
     @FXML
-    void onaddTourbuttonClicked(ActionEvent event) {
+    void onaddTourbuttonClicked(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(AddTourController.class.getResource("AddTour.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
     }
 

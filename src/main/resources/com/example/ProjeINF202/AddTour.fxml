@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ProjeINF202.AddTourController">
    <bottom>
-      <AnchorPane prefHeight="21.0" prefWidth="600.0" style="-fx-background-color: #da7536 #da7536;" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="21.0" prefWidth="600.0" style="-fx-background-color: #f8955b #f8955b;" BorderPane.alignment="CENTER" />
    </bottom>
    <left>
-      <AnchorPane prefHeight="353.0" prefWidth="65.0" style="-fx-background-color: #da7536 #da7536;" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="353.0" prefWidth="65.0" style="-fx-background-color: #f8955b #f8955b;" BorderPane.alignment="CENTER" />
    </left>
    <center>
       <Pane prefHeight="339.0" prefWidth="517.0" BorderPane.alignment="CENTER">
@@ -27,7 +27,17 @@
             <TextField fx:id="tagesablauf_field" layoutX="283.0" layoutY="128.0" promptText="Tagesablauf" />
             <TextField fx:id="hotel_field" layoutX="283.0" layoutY="186.0" promptText="Hotel" />
             <TextField fx:id="ort_field" layoutX="283.0" layoutY="64.0" promptText="Ort" />
-            <Button fx:id="buttonsave" layoutX="342.0" layoutY="302.0" mnemonicParsing="false" text="Save" textFill="#eea377">
+            <Button fx:id="buttonsave" layoutX="378.0" layoutY="303.0" mnemonicParsing="false" onAction="#onbuttonsaveCliecked" text="Save" textFill="#eea377">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Button>
+            <Text fill="#a13333" layoutX="80.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Neue Tour" textAlignment="CENTER" wrappingWidth="309.03515625">
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font>
+            </Text>
+            <Button fx:id="btnzurueck" layoutX="282.0" layoutY="302.0" mnemonicParsing="false" onAction="#onbuttonzurueckCliecked" prefHeight="25.0" prefWidth="70.0" text="Zurück" textFill="#eea377">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
@@ -36,9 +46,9 @@
       </Pane>
    </center>
    <right>
-      <AnchorPane prefHeight="353.0" prefWidth="65.0" style="-fx-background-color: #da7536 #da7536 #da7536 #da7536;" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="353.0" prefWidth="65.0" style="-fx-background-color: #f8955b #f8955b;" BorderPane.alignment="CENTER" />
    </right>
    <top>
-      <AnchorPane prefHeight="21.0" prefWidth="600.0" style="-fx-background-color: #da7536 #da7536 #da7536 #da7536;" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="21.0" prefWidth="600.0" style="-fx-background-color: #f8955b #f8955b;" BorderPane.alignment="CENTER" />
    </top>
 </BorderPane>
