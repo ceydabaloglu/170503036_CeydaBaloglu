@@ -51,7 +51,7 @@ public class AddKundeController {
 
         @FXML
         void onbuttonZurueckClicked(ActionEvent event) throws IOException {
-            root = FXMLLoader.load(KundeController.class.getResource("Kundegae.fxml"));
+            root = FXMLLoader.load(KundeController.class.getResource("Kundepage.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);

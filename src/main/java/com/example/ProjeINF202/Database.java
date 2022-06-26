@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public class Database {
@@ -45,11 +46,13 @@ public class Database {
         return false;
 
     }
-    public static ObservableList<TourInformationen> getTourInfoFromDatabase(){
+    public static ObservableList<TourInformationen> getTourInfo(){
+        ObservableList<TourInformationen> arr = FXCollections.observableArrayList();
         try {
-            ObservableList<TourInformationen> List = FXCollections.observableArrayList();
+           // ObservableList<TourInformationen> List = FXCollections.observableArrayList();
             Statement stmt = conn.createStatement();
-            ResultSet res =stmt.executeQuery("Select Id, Tourname, Zeitraum, Kapazität, Transfortmitteln, Preis, Tagesablauf , Hotel, Ort  from TourInfo");
+            ResultSet res =stmt.executeQuery("SELECT Id, Tourname, Zeitraum, Kapazität, Transfortmitteln, Preis, Tagesablauf , Hotel, Ort  FROM TourInfo");
+            while(res.next()){
             int s1 = res.getInt("Id");
             String s2 = res.getString("Tourname");
             String s3 = res.getString("Zeitraum");
@@ -59,12 +62,31 @@ public class Database {
             String s7 = res.getString("Tagesablauf");
             String s8 = res.getString("Hotel");
             String s9 = res.getString("Ort");
-            while(res.next()){
-                List.add(new TourInformationen(s1,s2,s3,s4,s5,s6,s7,s9,s8));
+
+            arr.add(new TourInformationen(s1,s2,s3,s4,s5,s6,s7,s9,s8));
             }
-            return List;
-        } catch (Exception e) {
-            return null;
+
+        } catch (SQLException e) {
+            System.out.println(e);
         }
+        return null;
     }
+    /*
+    public static ObservableList<BüroPersonal> getBüroPersonalnfo(){
+        ObservableList<BüroPersonal> arr = FXCollections.observableArrayList();
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet res =stmt.executeQuery("SELECT Büropersonal_rolle , benutzername FROM Büropersonal");
+            while(res.next()){
+                String s = res.getString("Büropersonal_rolle");
+                String s1 =res.getString("benutzername");
+
+                arr.add(new BüroPersonal(s ,s1));
+            }
+        }catch (SQLException e){
+            System.out.println(e);
+        }
+        return null;
+
+    }*/
 }

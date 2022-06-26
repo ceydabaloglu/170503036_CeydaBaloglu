@@ -9,12 +9,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class KundeController   {
+public class KundeController  implements Initializable {
 
     private Stage stage;
     private Scene scene;
@@ -38,6 +42,10 @@ public class KundeController   {
     @FXML
     private ListView<Kunde> kundelist;
 
+
+
+
+
     @FXML
     void onbevorbutonCliecked(ActionEvent event) throws IOException {
         root = FXMLLoader.load(homeController.class.getResource("homepage.fxml"));
@@ -55,4 +63,8 @@ public class KundeController   {
         stage.show();
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }

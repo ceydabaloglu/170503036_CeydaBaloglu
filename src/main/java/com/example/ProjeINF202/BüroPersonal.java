@@ -1,8 +1,9 @@
 package com.example.ProjeINF202;
 
-public class OfficePersonal extends Person {
+public class BüroPersonal extends Person {
 
-    public  OfficePersonal(int tc_no, String name, String vorname, int telefonnumber, String adress, String email, int alter) {
+
+    public BüroPersonal(int tc_no, String name, String vorname, int telefonnumber, String adress, String email, int alter) {
         super(tc_no, name, vorname, telefonnumber, adress, email, alter);
 
     }
@@ -10,6 +11,11 @@ public class OfficePersonal extends Person {
     protected String rolle;
     protected String Benutzername;
     protected int Passwort;
+   // private String Büropersonal_name;
+   // private String Büropersonal_vorname;
+    //private String Büropersonal_email;
+    //private String Büropersonal_adresse;
+
 
 
     public String getRolle() {

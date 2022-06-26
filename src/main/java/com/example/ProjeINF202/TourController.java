@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -18,6 +19,9 @@ import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class TourController implements Initializable {
@@ -27,10 +31,10 @@ public class TourController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        SetListView();
+
     }
     @FXML
-    private ListView<TourInformationen> Tourlist;
+    private ListView<String> TourList;
 
     @FXML
     private Label labelTourListen;
@@ -75,7 +79,7 @@ public class TourController implements Initializable {
 
 
 
-    public void SetListView(){
+   /* public void SetListView(){
         Database.connect();
         Tourlist.setItems(Database.getTourInfoFromDatabase());
         Tourlist.setCellFactory(new Callback<ListView<TourInformationen>, ListCell<TourInformationen>>()
@@ -87,7 +91,7 @@ public class TourController implements Initializable {
             }
         });
 
-    }
+    }*/
 
 
 }
