@@ -1,5 +1,7 @@
 package com.example.ProjeINF202;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,15 +31,25 @@ public class TourController implements Initializable {
     private Scene scene;
     private Parent root;
 
+    public TourController() {
+        Database db = new Database();
+        db.connect();
+        ObservableTourList = FXCollections.observableArrayList();
+        for (TourInformationen tourInformationen : db.getTourInfo()) {
+            ObservableTourList.add(tourInformationen);
+        }
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        Tourlist.setItems(ObservableTourList);
+        Tourlist.setCellFactory(tourListView -> new TourListView());
+
     }
     @FXML
-    private ListView<String> TourList;
+    private ListView<TourInformationen> Tourlist;
 
-    @FXML
-    private Label labelTourListen;
+    private ObservableList<TourInformationen> ObservableTourList;
 
     @FXML
     private Button bevorbutton;
@@ -75,7 +87,6 @@ public class TourController implements Initializable {
 
 
     }
-
 
 
 

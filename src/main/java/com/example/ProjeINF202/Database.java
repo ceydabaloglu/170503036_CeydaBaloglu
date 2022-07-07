@@ -51,13 +51,13 @@ public class Database {
         try {
            // ObservableList<TourInformationen> List = FXCollections.observableArrayList();
             Statement stmt = conn.createStatement();
-            ResultSet res =stmt.executeQuery("SELECT Id, Tourname, Zeitraum, Kapazität, Transfortmitteln, Preis, Tagesablauf , Hotel, Ort  FROM TourInfo");
+            ResultSet res =stmt.executeQuery("SELECT Id, Tourname, Zeitraum, Kapazität, Transportmitteln, Preis, Tagesablauf , Hotel, Ort  FROM TourInfo");
             while(res.next()){
             int s1 = res.getInt("Id");
             String s2 = res.getString("Tourname");
             String s3 = res.getString("Zeitraum");
             int s4 = res.getInt("Kapazität");
-            String s5 = res.getString("Transfortmitteln");
+            String s5 = res.getString("Transportmitteln");
             int s6 = res.getInt("Preis");
             String s7 = res.getString("Tagesablauf");
             String s8 = res.getString("Hotel");
@@ -65,11 +65,13 @@ public class Database {
 
             arr.add(new TourInformationen(s1,s2,s3,s4,s5,s6,s7,s9,s8));
             }
+            return arr;
 
         } catch (SQLException e) {
             System.out.println(e);
+            return null;
         }
-        return null;
+
     }
     /*
     public static ObservableList<BüroPersonal> getBüroPersonalnfo(){
