@@ -3,29 +3,31 @@ package com.example.ProjeINF202;
 public class BüroPersonal extends Person {
 
 
-    public BüroPersonal(int tc_no, String name, String vorname, int telefonnumber, String adress, String email, int alter) {
+    public BüroPersonal(int tc_no, String name, String vorname, int telefonnumber, String adress, String email, int alter, String rolle, String benutzername, String password) {
         super(tc_no, name, vorname, telefonnumber, adress, email, alter);
-
+        Rolle = rolle;
+        Benutzername = benutzername;
+        Passwort = password;
     }
 
-    protected String rolle;
-    protected String Benutzername;
-    protected int Passwort;
-   // private String Büropersonal_name;
-   // private String Büropersonal_vorname;
-    //private String Büropersonal_email;
-    //private String Büropersonal_adresse;
+    public BüroPersonal(String name, String vorname, String email){
+        super(name, vorname, email);
+    }
 
+
+    protected String Rolle;
+    protected String Benutzername;
+    protected String Passwort;
 
 
     public String getRolle() {
 
-        return rolle;
+        return Rolle;
     }
 
     public void setRolle(String rolle) {
 
-        this.rolle = rolle;
+        this.Rolle = rolle;
     }
 
     public String getBenutzername() {
@@ -38,12 +40,12 @@ public class BüroPersonal extends Person {
         this.Benutzername = benutzername;
     }
 
-    public void setPasswort(int passwort) {
+    public void setPasswort(String passwort) {
 
         this.Passwort = passwort;
     }
 
-    public int getPasswort() {
+    public String getPasswort() {
 
         return Passwort;
     }

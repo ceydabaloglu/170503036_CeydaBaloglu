@@ -73,22 +73,25 @@ public class Database {
         }
 
     }
-    /*
+
     public static ObservableList<BüroPersonal> getBüroPersonalnfo(){
         ObservableList<BüroPersonal> arr = FXCollections.observableArrayList();
         try{
             Statement stmt = conn.createStatement();
-            ResultSet res =stmt.executeQuery("SELECT Büropersonal_rolle , benutzername FROM Büropersonal");
+            ResultSet res =stmt.executeQuery("SELECT Büropersonal_name ,  Büropersonal_vorname ,Büropersonal_email FROM Büropersonal");
             while(res.next()){
-                String s = res.getString("Büropersonal_rolle");
-                String s1 =res.getString("benutzername");
+                String s = res.getString("Büropersonal_name");
+                String s1 =res.getString("Büropersonal_vorname");
+                String s2 =res.getString("Büropersonal_email");
 
-                arr.add(new BüroPersonal(s ,s1));
+                arr.add(new BüroPersonal(s ,s1 ,s2));
             }
+            return arr;
         }catch (SQLException e){
             System.out.println(e);
-        }
-        return null;
+            return null;
 
-    }*/
+        }
+
+    }
 }

@@ -1,5 +1,6 @@
 package com.example.ProjeINF202;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,14 +20,34 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class BüroPersonController  {
+public class BüroPersonController implements Initializable {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
 
+    public BüroPersonController() {
+        Database db = new Database();
+        db.connect();
+        ObservableBüropersonalList = FXCollections.observableArrayList();
+        for (BüroPersonal  büropersonal : db.getBüroPersonalnfo()) {
+            ObservableBüropersonalList.add(büropersonal);
+        }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        BüropersonalList.setItems(ObservableBüropersonalList);
+        BüropersonalList.setCellFactory(tourListView -> new BüroPersonListView());
+
+    }
+
     @FXML
-    private ListView<BüroPersonal> BüropersonaList;
+    private ListView<BüroPersonal> BüropersonalList;
+
+    private ObservableList<BüroPersonal> ObservableBüropersonalList;
+
 
     @FXML
     private Button btnAdd;
@@ -36,14 +57,8 @@ public class BüroPersonController  {
 
     @FXML
     private Button btnzurück;
-    @FXML
-    private TableColumn<BüroPersonal, String> benutzername;
 
-    @FXML
-    private TableColumn<BüroPersonal, String> rolle;
 
-    @FXML
-    private TableView<String> table;
 
     @FXML
     void onbtnzurückCliecked(ActionEvent event) throws IOException {
@@ -64,18 +79,4 @@ public class BüroPersonController  {
 
     }
 
-
-   /* @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-        rolle.setCellValueFactory(new PropertyValueFactory<BüroPersonal,String>("rolle"));
-        benutzername.setCellValueFactory(new PropertyValueFactory<BüroPersonal,String>("benutzername"));
-
-        //getBüroPersonalInfo.setItems(List());
-    }
-    @FXML
-    public ObservableList List(){
-        ObservableList arr = Database.getBüropersonal();
-        return arr;
-    } */
 }

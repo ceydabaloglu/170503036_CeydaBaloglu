@@ -22,9 +22,14 @@ public class Person {
         this.Email = email;
         this.Alter = alter;
     }
-
+    //SADECE GENEL BİLGİ VERMEK İÇİN
+    public Person(String name,String vorname, String email){
+        this.Name = name;
+        this.Vorname = vorname;
+        this.Email = email;
+    }
     public void setAll(int tc ,String ad, String n ,String v, int tel, String e , int al){
-        this.tc_no = tc_no;
+        this.tc_no = tc;
         this.Adress = ad;
         this.Name = n;
         this.Vorname = v;

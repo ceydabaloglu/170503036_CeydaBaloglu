@@ -3,8 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -20,7 +18,7 @@
             </Label>
          </children>
       </Pane>
-      <ListView fx:id="BüropersonaList" layoutY="93.0" prefHeight="200.0" prefWidth="600.0" />
+      <ListView fx:id="BüropersonalList" layoutY="93.0" prefHeight="200.0" prefWidth="600.0" />
       <Button fx:id="btnupdate" layoutX="505.0" layoutY="327.0" mnemonicParsing="false" text="Update" textFill="#f8955b">
          <font>
             <Font name="Arial Bold" size="14.0" />
@@ -36,11 +34,5 @@
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <TableView fx:id="table" layoutX="62.0" layoutY="93.0" prefHeight="200.0" prefWidth="200.0">
-        <columns>
-          <TableColumn fx:id="rolle" prefWidth="75.0" text="Rolle" />
-          <TableColumn fx:id="benutzername" prefWidth="75.0" text="benutzername" />
-        </columns>
-      </TableView>
    </children>
 </AnchorPane>
