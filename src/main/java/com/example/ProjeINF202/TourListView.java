@@ -2,8 +2,10 @@ package com.example.ProjeINF202;
 
 import java.io.IOException;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.BorderPane;
@@ -28,6 +30,14 @@ public class TourListView extends ListCell<TourInformationen> {
     private GridPane gridPane;
 
     private FXMLLoader mLLoader;
+
+    @FXML
+    void OnClickedButtonLösche(ActionEvent event) {
+
+        Database.DeleteTourFromDb(this.getItem());
+        this.updateItem(null,true);
+    }
+
 
 
     @Override

@@ -49,7 +49,7 @@ public class Database {
     public static ObservableList<TourInformationen> getTourInfo(){
         ObservableList<TourInformationen> arr = FXCollections.observableArrayList();
         try {
-           // ObservableList<TourInformationen> List = FXCollections.observableArrayList();
+
             Statement stmt = conn.createStatement();
             ResultSet res =stmt.executeQuery("SELECT Id, Tourname, Zeitraum, Kapazität, Transportmitteln, Preis, Tagesablauf , Hotel, Ort  FROM TourInfo");
             while(res.next()){
@@ -93,5 +93,106 @@ public class Database {
 
         }
 
+    }
+    public static ObservableList<Kunde> getKundeInfo(){
+        ObservableList<Kunde> arr = FXCollections.observableArrayList();
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet res =stmt.executeQuery("SELECT Kundennummer, Name ,  Vorname ,Email FROM Kunde");
+            while(res.next()){
+                int s = res.getInt("Kundennummer");
+                String s1 =res.getString("Name");
+                String s2 =res.getString("Vorname");
+                String s3 =res.getString("Email");
+
+                arr.add(new Kunde(s,s1 ,s2,s3));
+            }
+            return arr;
+        }catch (SQLException e){
+            System.out.println(e);
+            return null;
+
+        }
+
+    }
+    public static void CreateNewTourToDb(TourInformationen tourInfo){
+
+
+        String sql = "INSERT INTO TourInfo(Id ,Tourname, Zeitraum, Kapazität, Transportmitteln, Preis, Tagesablauf , Hotel, Ort) VALUES(?,?,?,?,?,?,?,?,?)";
+
+        try (
+
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, tourInfo.getId());
+
+            pstmt.setString(2, tourInfo.getTourname());
+
+            pstmt.setString(3, tourInfo.getZeitraum());
+
+            pstmt.setInt(4, tourInfo.getKapazitat());
+
+            pstmt.setString(5, tourInfo.getTransportmittel());
+
+            pstmt.setInt(6, tourInfo.getPreis());
+
+            pstmt.setString(7, tourInfo.getTagesablauf());
+
+            pstmt.setString(8, tourInfo.getHotels());
+
+            pstmt.setString(9, tourInfo.getOrt());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void DeleteTourFromDb(TourInformationen tourInfo){
+        String sql = "DELETE FROM TourInfo WHERE id = ?";
+
+        try (
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            // set the corresponding param
+            pstmt.setInt(1, tourInfo.getId());
+            // execute the delete statement
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void CreateNewKundeToDb(Kunde KundeInfo){
+
+
+        String sql = "INSERT INTO Kunde( Kundennummer,TC_nummer ,Telefonnummer, Name ,Vorname, Adress, Email, Alter) VALUES(?,?,?,?,?,?,?,?)";
+
+        try (
+
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, KundeInfo.getKundennummer());
+
+            pstmt.setInt(2, KundeInfo.gettc_no());
+
+            pstmt.setInt(3, KundeInfo.getTelefonnummer());
+
+            pstmt.setString(4, KundeInfo.getName());
+
+            pstmt.setString(5, KundeInfo.getVorname());
+
+            pstmt.setString(6, KundeInfo.getAdress());
+
+            pstmt.setString(7, KundeInfo.getEmail());
+
+            pstmt.setInt(8, KundeInfo.getAlter());
+
+
+
+
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

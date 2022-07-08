@@ -32,10 +32,9 @@ public class TourController implements Initializable {
     private Parent root;
 
     public TourController() {
-        Database db = new Database();
-        db.connect();
+
         ObservableTourList = FXCollections.observableArrayList();
-        for (TourInformationen tourInformationen : db.getTourInfo()) {
+        for (TourInformationen tourInformationen : Database.getTourInfo()) {
             ObservableTourList.add(tourInformationen);
         }
     }
@@ -60,6 +59,9 @@ public class TourController implements Initializable {
     @FXML
     private Button AddTourButon;
 
+    @FXML
+    private Button ButtonLöschen;
+
 
     @FXML
     void onaddTourbuttonClicked(ActionEvent event) throws IOException {
@@ -81,6 +83,14 @@ public class TourController implements Initializable {
         stage.show();
 
     }
+
+    @FXML
+    void OnClicekedButtonLöschen(ActionEvent event) {
+
+        Database.DeleteTourFromDb(Tourlist.getSelectionModel().getSelectedItem());
+        Tourlist.getItems().remove(Tourlist.getSelectionModel().getSelectedItem());
+    }
+
 
     @FXML
     void onnextbuttonClicked(ActionEvent event) {

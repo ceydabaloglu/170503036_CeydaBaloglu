@@ -1,5 +1,7 @@
 package com.example.ProjeINF202;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +26,20 @@ public class KundeController  implements Initializable {
     private Scene scene;
     private Parent root;
 
+    public KundeController() {
+
+        Observablekundelist = FXCollections.observableArrayList();
+        for (Kunde kunde : Database.getKundeInfo()) {
+            Observablekundelist.add(kunde);
+        }
+    }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        kundelist.setItems(Observablekundelist);
+        kundelist.setCellFactory(KundeListView -> new KundeListView());
+
+    }
     @FXML
     private Button btnAdd;
 
@@ -42,8 +58,7 @@ public class KundeController  implements Initializable {
     @FXML
     private ListView<Kunde> kundelist;
 
-
-
+    private ObservableList<Kunde> Observablekundelist;
 
 
     @FXML
@@ -63,8 +78,5 @@ public class KundeController  implements Initializable {
         stage.show();
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
 
-    }
 }

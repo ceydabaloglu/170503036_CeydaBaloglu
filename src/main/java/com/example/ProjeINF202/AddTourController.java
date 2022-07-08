@@ -53,8 +53,15 @@ public class AddTourController {
 
 
         @FXML
-        void onbuttonsaveCliecked(ActionEvent event) {
+        void onbuttonsaveCliecked(ActionEvent event) throws IOException{
+                TourInformationen tourInfo = new TourInformationen(Integer.valueOf(ıd_field.getText()), name_field.getText(), zeitraum_field.getText(), Integer.valueOf(kapazitat_field.getText()), transport_field.getText(), Integer.valueOf(preis_field.getText()), tagesablauf_field.getText(), hotel_field.getText(), ort_field.getText());
+                Database.CreateNewTourToDb(tourInfo);
 
+                root = FXMLLoader.load(TourController.class.getResource("Tourenview.fxml"));
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
         }
 
         @FXML

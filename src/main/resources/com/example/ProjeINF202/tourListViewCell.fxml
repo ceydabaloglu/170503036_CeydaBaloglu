@@ -5,21 +5,27 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="321.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <columnConstraints>
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="76.0" minWidth="60.0" prefWidth="76.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="60.0" prefWidth="71.0" />
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="60.0" minWidth="18.0" prefWidth="59.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="82.0" minWidth="49.0" prefWidth="58.0" />
-      <ColumnConstraints maxWidth="57.0" minWidth="28.0" prefWidth="51.0" />
+      <ColumnConstraints maxWidth="74.0" minWidth="28.0" prefWidth="74.0" />
+      <ColumnConstraints maxWidth="57.0" minWidth="18.0" prefWidth="18.0" />
    </columnConstraints>
    <rowConstraints>
+      <RowConstraints />
       <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <Label fx:id="IdLabel" prefHeight="17.0" prefWidth="32.0" text="Label" />
-      <Label fx:id="TourNamelabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" />
-      <Label fx:id="PreisLabel" text="Label" GridPane.columnIndex="3" GridPane.halignment="LEFT" />
-      <Label fx:id="Zeitraumlabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+      <Label fx:id="IdLabel" prefHeight="17.0" prefWidth="32.0" text="Label" GridPane.rowIndex="1" />
+      <Label fx:id="TourNamelabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+      <Label fx:id="PreisLabel" text="Label" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+      <Label fx:id="Zeitraumlabel" text="Label" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+      <Label prefHeight="17.0" prefWidth="42.0" text="ID" />
+      <Label text="TourName" GridPane.columnIndex="1" />
+      <Label text="Preis" GridPane.columnIndex="3" />
+      <Label prefHeight="17.0" prefWidth="56.0" text="Zeitraum" GridPane.columnIndex="4" />
    </children>
 </GridPane>

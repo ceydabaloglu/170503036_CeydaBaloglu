@@ -45,7 +45,25 @@ public class AddKundeController {
         private TextField vorname_field;
 
         @FXML
-        void OnbuttonsaveCliecked(ActionEvent event) {
+        private TextField kundennummer_field;
+
+        @FXML
+        void OnbuttonsaveCliecked(ActionEvent event) throws IOException {
+                Kunde KundeInfo = new Kunde(
+                        Integer.valueOf(tc_field.getText()) ,
+                        name_field.getText(),
+                        vorname_field.getText(),
+                        Integer.valueOf(telefonnummer_field.getText()),
+                        adresse_field.getText(),email_field.getText() ,
+                        Integer.valueOf(alter_field.getText()),
+                        Integer.valueOf(kundennummer_field.getText()));
+                Database.CreateNewKundeToDb(KundeInfo);
+
+                root = FXMLLoader.load(KundeController.class.getResource("Kundepage.fxml"));
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
 
         }
 
