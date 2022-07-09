@@ -26,7 +26,7 @@
             <Font name="Arial Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnLösche" layoutX="458.0" layoutY="322.0" mnemonicParsing="false" text="Löschen" textFill="#f8955b">
+      <Button fx:id="btnLösche" layoutX="458.0" layoutY="322.0" mnemonicParsing="false" onAction="#OnClickedButtonLöschen" text="Löschen" textFill="#f8955b">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>

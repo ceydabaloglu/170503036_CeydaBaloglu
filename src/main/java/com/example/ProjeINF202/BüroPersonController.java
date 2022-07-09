@@ -58,6 +58,10 @@ public class BüroPersonController implements Initializable {
     @FXML
     private Button btnzurück;
 
+    @FXML
+    private Button btnLöschen;
+
+
 
 
     @FXML
@@ -78,5 +82,12 @@ public class BüroPersonController implements Initializable {
         stage.show();
 
     }
+
+    @FXML
+    void OnbtnLöschenCliecked(ActionEvent event) {
+        Database.DeleteBüroPersonalFromDb(BüropersonalList.getSelectionModel().getSelectedItem());
+        BüropersonalList.getItems().remove(BüropersonalList.getSelectionModel().getSelectedItem());
+    }
+
 
 }

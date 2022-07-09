@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ProjeINF202.AddBüroPersonalController">
    <bottom>
       <Pane prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #f8955b #f8955b #f8955b #f8955b;" BorderPane.alignment="CENTER" />
@@ -24,7 +23,12 @@
             <TextField fx:id="Vorname" layoutX="268.0" layoutY="112.0" promptText="Vorname" />
             <TextField fx:id="email" layoutX="268.0" layoutY="172.0" promptText="Email" />
             <TextField fx:id="Adresse" layoutX="37.0" layoutY="229.0" promptText="Adresse" />
-            <Button fx:id="buttonsave" layoutX="319.0" layoutY="229.0" mnemonicParsing="false" text="Save" textFill="#e8a17b">
+            <Button fx:id="buttonsave" layoutX="380.0" layoutY="230.0" mnemonicParsing="false" text="Save" textFill="#e8a17b">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonZurück" layoutX="280.0" layoutY="230.0" mnemonicParsing="false" onAction="#OnClickedButtonZurück" prefHeight="23.0" prefWidth="62.0" text="Zurück" textFill="#e8a17b">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>

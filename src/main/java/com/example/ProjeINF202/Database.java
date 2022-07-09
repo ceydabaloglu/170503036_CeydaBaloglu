@@ -195,4 +195,36 @@ public class Database {
             System.out.println(e.getMessage());
         }
     }
+
+    public static void DeleteKundeFromDb(Kunde kunde){
+        String sql = "DELETE FROM Kunde WHERE Kundennummer = ?";
+
+        try (
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            // set the corresponding param
+            pstmt.setInt(1, kunde.getKundennummer());
+            // execute the delete statement
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void DeleteBüroPersonalFromDb(BüroPersonal büropersonal){
+        String sql = "DELETE FROM Büropersonal WHERE benutzername = ?";
+
+        try (
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            // set the corresponding param
+            pstmt.setString(2, BüroPersonal.getbenutzername());
+            // execute the delete statement
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

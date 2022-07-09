@@ -13,8 +13,7 @@ public class KundeListView extends ListCell<Kunde> {
     private Label EmailLabel;
 
     @FXML
-    private Label KundenLabel;
-
+    private Label KundenoLabel;
     @FXML
     private Label NameLabel;
 
@@ -48,7 +47,7 @@ public class KundeListView extends ListCell<Kunde> {
 
             }
 
-            KundenLabel.setText(String.valueOf(Kunde.getKundennummer()));
+            KundenoLabel.setText(String.valueOf(Kunde.getKundennummer()));
             NameLabel.setText(String.valueOf(Kunde.getName()));
             VornameLabel.setText(Kunde.getVorname());
             EmailLabel.setText(String.valueOf(Kunde.getEmail()));

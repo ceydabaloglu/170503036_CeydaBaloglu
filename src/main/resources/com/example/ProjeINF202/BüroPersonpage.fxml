@@ -24,12 +24,17 @@
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnAdd" layoutX="428.0" layoutY="328.0" mnemonicParsing="false" onAction="#OnbtnAddCliecked" text="Add" textFill="#f8955b">
+      <Button fx:id="btnAdd" layoutX="442.0" layoutY="329.0" mnemonicParsing="false" onAction="#OnbtnAddCliecked" text="Add" textFill="#f8955b">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
       <Button fx:id="btnzurück" layoutX="29.0" layoutY="329.0" mnemonicParsing="false" onAction="#onbtnzurückCliecked" text="Zurück" textFill="#f8955b">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnLöschen" layoutX="349.0" layoutY="330.0" mnemonicParsing="false" onAction="#OnbtnLöschenCliecked" text="Löschen" textFill="#f8955b">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>

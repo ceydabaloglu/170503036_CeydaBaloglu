@@ -12,6 +12,7 @@ public class BüroPersonal extends Person {
 
     public BüroPersonal(String name, String vorname, String email){
         super(name, vorname, email);
+
     }
 
 

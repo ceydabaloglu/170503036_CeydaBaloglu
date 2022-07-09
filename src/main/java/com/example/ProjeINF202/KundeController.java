@@ -78,5 +78,10 @@ public class KundeController  implements Initializable {
         stage.show();
     }
 
+    @FXML
+    void OnClickedButtonLöschen(ActionEvent event) {
+        Database.DeleteKundeFromDb(kundelist.getSelectionModel().getSelectedItem());
+        kundelist.getItems().remove(kundelist.getSelectionModel().getSelectedItem());
+    }
 
 }
