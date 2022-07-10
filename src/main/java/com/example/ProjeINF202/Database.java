@@ -166,7 +166,7 @@ public class Database {
     public static void CreateNewKundeToDb(Kunde KundeInfo){
 
 
-        String sql = "INSERT INTO Kunde( Kundennummer,TC_nummer ,Telefonnummer, Name ,Vorname, Adress, Email, Alter) VALUES(?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO Kunde( Kundennummer,TC_nummer ,Telefonnummer, Name ,Vorname, Adresse, Email, KundeAge) VALUES(?,?,?,?,?,?,?,?)";
 
         try (
 
@@ -212,14 +212,49 @@ public class Database {
         }
     }
 
-    public static void DeleteBüroPersonalFromDb(BüroPersonal büropersonal){
-        String sql = "DELETE FROM Büropersonal WHERE benutzername = ?";
+    public static void CreateNewBüroPersonalToDb(BüroPersonal büroPersonal){
+
+
+        String sql = "INSERT INTO Büropersonal( Büropersonal_rolle,benutzername ,passwort, Büropersonal_name ,Büropersonal_vorname, Büropersonal_email, Büropersonal_adresse,Büropersonal_tc,Büropersonal_alter,Büropersonal_telefonnum) VALUES(?,?,?,?,?,?,?,?,?,?)";
+
+        try (
+
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, büroPersonal.getRolle());
+
+            pstmt.setString(2, büroPersonal.getBenutzername());
+
+            pstmt.setString(3, büroPersonal.getPasswort());
+
+            pstmt.setString(4, büroPersonal.getName());
+
+            pstmt.setString(5, büroPersonal.getVorname());
+
+            pstmt.setString(6, büroPersonal.getEmail());
+
+            pstmt.setString(7, büroPersonal.getAdress());
+
+            pstmt.setInt(8, büroPersonal.gettc_no());
+
+            pstmt.setInt(9, büroPersonal.getAlter());
+
+            pstmt.setInt(10, büroPersonal.getTelefonnummer());
+
+
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void DeleteBüroPersonalFromDb(BüroPersonal büroPersonal){
+        String sql = "DELETE FROM Büropersonal WHERE Büropersonal_rolle = ?";
 
         try (
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // set the corresponding param
-            pstmt.setString(2, BüroPersonal.getbenutzername());
+            pstmt.setString(1, büroPersonal.getRolle());
             // execute the delete statement
             pstmt.executeUpdate();
 

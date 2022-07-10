@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -47,6 +48,7 @@ public class AddKundeController {
         @FXML
         private TextField kundennummer_field;
 
+
         @FXML
         void OnbuttonsaveCliecked(ActionEvent event) throws IOException {
                 Kunde KundeInfo = new Kunde(
@@ -54,7 +56,8 @@ public class AddKundeController {
                         name_field.getText(),
                         vorname_field.getText(),
                         Integer.valueOf(telefonnummer_field.getText()),
-                        adresse_field.getText(),email_field.getText() ,
+                        adresse_field.getText(),
+                        email_field.getText() ,
                         Integer.valueOf(alter_field.getText()),
                         Integer.valueOf(kundennummer_field.getText()));
                 Database.CreateNewKundeToDb(KundeInfo);
@@ -64,6 +67,7 @@ public class AddKundeController {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+
 
         }
 
