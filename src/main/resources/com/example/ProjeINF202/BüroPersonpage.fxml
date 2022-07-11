@@ -39,5 +39,6 @@
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
+      <Label fx:id="ErrorMessageLabel" layoutX="153.0" layoutY="310.0" prefHeight="17.0" prefWidth="263.0" textAlignment="CENTER" textFill="#fc0101" />
    </children>
 </AnchorPane>

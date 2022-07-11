@@ -100,19 +100,4 @@ public class TourController implements Initializable {
 
 
 
-   /* public void SetListView(){
-        Database.connect();
-        Tourlist.setItems(Database.getTourInfoFromDatabase());
-        Tourlist.setCellFactory(new Callback<ListView<TourInformationen>, ListCell<TourInformationen>>()
-        {
-            @Override
-            public ListCell<TourInformationen> call(ListView<TourInformationen> listView)
-            {
-                return new ListCell();
-            }
-        });
-
-    }*/
-
-
 }

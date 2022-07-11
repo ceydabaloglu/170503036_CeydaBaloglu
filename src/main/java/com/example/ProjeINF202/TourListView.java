@@ -5,14 +5,23 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 public class TourListView extends ListCell<TourInformationen> {
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+    private TourInformationen tourInfo;
 
     @FXML
     private Label IdLabel;
@@ -30,6 +39,22 @@ public class TourListView extends ListCell<TourInformationen> {
     private GridPane gridPane;
 
     private FXMLLoader mLLoader;
+
+    @FXML
+    private Button ButtonMehr;
+
+    @FXML
+    void OnClickedButtonMehr(ActionEvent event)  throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MehrTourInfo.fxml"));
+        root = (Parent)fxmlLoader.load();
+        MehrTourInfoController controller = fxmlLoader.<MehrTourInfoController>getController();
+        controller.setTourInfo(tourInfo);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
 
     @FXML
     void OnClickedButtonLösche(ActionEvent event) {
@@ -61,7 +86,7 @@ public class TourListView extends ListCell<TourInformationen> {
                 }
 
             }
-
+            tourInfo = tourInformationen;
             IdLabel.setText(String.valueOf(tourInformationen.getId()));
             PreisLabel.setText(String.valueOf(tourInformationen.getPreis()));
             TourNamelabel.setText(tourInformationen.getTourname());

@@ -52,7 +52,7 @@ public class homeController {
     void onTourenClicked(ActionEvent event) throws IOException {
         root = FXMLLoader.load(TourController.class.getResource("Tourenview.fxml"));
         if(paneview.getChildren() != null){
-            paneview.getChildren().remove(paneview.getChildren().get(0));
+            paneview.getChildren().clear();
         }
 
         paneview.getChildren().add(root);
@@ -62,7 +62,7 @@ public class homeController {
     void onKundenClicked(ActionEvent event) throws IOException {
         FXMLLoader KundepageScreene = new FXMLLoader(KundeController.class.getResource("Kundepage.fxml"));
         if(paneview.getChildren() != null){
-            paneview.getChildren().remove(paneview.getChildren().get(0));
+            paneview.getChildren().clear();
         }
         paneview.getChildren().add(KundepageScreene.load());
     }
@@ -70,7 +70,7 @@ public class homeController {
     void onBüroClicked(ActionEvent event) throws IOException {
         root = FXMLLoader.load(BüroPersonController.class.getResource("BüroPersonpage.fxml"));
         if(paneview.getChildren() != null){
-            paneview.getChildren().remove(paneview.getChildren().get(0));
+            paneview.getChildren().clear();
         }
         paneview.getChildren().add(root);
 
