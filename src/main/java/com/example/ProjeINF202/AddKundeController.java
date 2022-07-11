@@ -47,19 +47,30 @@ public class AddKundeController {
 
         @FXML
         private TextField kundennummer_field;
+        @FXML
+        private Label errorMessageLabel;
 
 
         @FXML
         void OnbuttonsaveCliecked(ActionEvent event) throws IOException {
-                Kunde KundeInfo = new Kunde(
-                        Integer.valueOf(tc_field.getText()) ,
-                        name_field.getText(),
-                        vorname_field.getText(),
-                        Integer.valueOf(telefonnummer_field.getText()),
-                        adresse_field.getText(),
-                        email_field.getText() ,
-                        Integer.valueOf(alter_field.getText()),
-                        Integer.valueOf(kundennummer_field.getText()));
+
+
+                if( name_field.getText().isEmpty() || vorname_field.getText().isEmpty() ||
+                        email_field.getText().isEmpty() || alter_field.getText().isEmpty() || tc_field.getText().isEmpty()
+                        || telefonnummer_field.getText().isEmpty() || kundennummer_field.getText().isEmpty())  {
+
+                        errorMessageLabel.setText("Fehlende Informationen");
+
+                }else{
+                        Kunde KundeInfo = new Kunde(
+                                Integer.valueOf(tc_field.getText()) ,
+                                name_field.getText(),
+                                vorname_field.getText(),
+                                Integer.valueOf(telefonnummer_field.getText()),
+                                adresse_field.getText(),
+                                email_field.getText() ,
+                                Integer.valueOf(alter_field.getText()),
+                                Integer.valueOf(kundennummer_field.getText()));
                 Database.CreateNewKundeToDb(KundeInfo);
 
                 root = FXMLLoader.load(KundeController.class.getResource("Kundepage.fxml"));
@@ -67,6 +78,7 @@ public class AddKundeController {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+                }
 
 
         }

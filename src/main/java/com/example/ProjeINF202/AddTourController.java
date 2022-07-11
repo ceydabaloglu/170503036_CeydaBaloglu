@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -51,10 +52,29 @@ public class AddTourController {
         @FXML
         private TextField ıd_field;
 
+        @FXML
+        private Label ErrorMessageLabel;
+
 
         @FXML
         void onbuttonsaveCliecked(ActionEvent event) throws IOException{
-                TourInformationen tourInfo = new TourInformationen(Integer.valueOf(ıd_field.getText()), name_field.getText(), zeitraum_field.getText(), Integer.valueOf(kapazitat_field.getText()), transport_field.getText(), Integer.valueOf(preis_field.getText()), tagesablauf_field.getText(), hotel_field.getText(), ort_field.getText());
+                if(ıd_field.getText().isEmpty() || name_field.getText().isEmpty() || zeitraum_field.getText().isEmpty()
+                || kapazitat_field.getText().isEmpty() || transport_field.getText().isEmpty() || preis_field.getText().isEmpty()
+                || transport_field.getText().isEmpty() || preis_field.getText().isEmpty() || tagesablauf_field.getText().isEmpty()
+                || hotel_field.getText().isEmpty() || ort_field.getText().isEmpty() ){
+
+                        ErrorMessageLabel.setText("Fehlende Informationen");
+                }else {
+
+                TourInformationen tourInfo = new TourInformationen(Integer.valueOf(ıd_field.getText()),
+                        name_field.getText(),
+                        zeitraum_field.getText(),
+                        Integer.valueOf(kapazitat_field.getText()),
+                        transport_field.getText(),
+                        Integer.valueOf(preis_field.getText()),
+                        tagesablauf_field.getText(),
+                        hotel_field.getText(),
+                        ort_field.getText());
                 Database.CreateNewTourToDb(tourInfo);
 
                 root = FXMLLoader.load(TourController.class.getResource("Tourenview.fxml"));
@@ -62,6 +82,7 @@ public class AddTourController {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+                }
         }
 
         @FXML

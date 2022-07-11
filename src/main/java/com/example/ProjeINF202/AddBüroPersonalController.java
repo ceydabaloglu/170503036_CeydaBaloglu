@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -55,6 +56,9 @@ public class AddBüroPersonalController {
     private TextField vorname_field;
 
     @FXML
+    private Label ErrorMessageLabel;
+
+    @FXML
     void OnClickedButtonZurück(ActionEvent event) throws IOException {
         root = FXMLLoader.load(TourController.class.getResource("BüroPersonpage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -65,6 +69,18 @@ public class AddBüroPersonalController {
     }
     @FXML
     void OnClickedButtonSave(ActionEvent event) throws IOException {
+       /* if(Database.rolle !="IT-Manager"){
+            ErrorMessageLabel.setText("yetkili değilsin ");
+            return ;
+        } */
+
+        if(tc_field.getText().isEmpty() || name_field.getText().isEmpty() || vorname_field.getText().isEmpty() ||
+           telefonnum_field.getText().isEmpty() || adresse_field.getText().isEmpty() || email_field.getText().isEmpty()
+          || benutzer_rolle_field.getText().isEmpty() || benutzername_field.getText().isEmpty() || passwort_field.getText().isEmpty()) {
+
+            ErrorMessageLabel.setText("Fehlende Informationen");
+        }else {
+
         BüroPersonal büroPersonal = new BüroPersonal(
                 Integer.valueOf(tc_field.getText()),
                 name_field.getText(),
@@ -84,6 +100,7 @@ public class AddBüroPersonalController {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+        }
     }
 
 }

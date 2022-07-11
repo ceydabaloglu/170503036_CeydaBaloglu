@@ -27,10 +27,9 @@ public class BüroPersonController implements Initializable {
     private Parent root;
 
     public BüroPersonController() {
-        Database db = new Database();
-        db.connect();
+
         ObservableBüropersonalList = FXCollections.observableArrayList();
-        for (BüroPersonal  büropersonal : db.getBüroPersonalnfo()) {
+        for (BüroPersonal  büropersonal :Database.getBüroPersonalnfo()) {
             ObservableBüropersonalList.add(büropersonal);
         }
     }

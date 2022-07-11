@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class Database {
     public  static Connection conn = null;
     public static Statement stmt;
+    public static String rolle;
 
 
     public static void connect() {
@@ -32,11 +33,12 @@ public class Database {
     public static Boolean containBüropersonal(String benutzername,String passwort){
         try{
             Statement stmt = conn.createStatement();
-            ResultSet res =stmt.executeQuery("SELECT benutzername , passwort FROM Büropersonal");
+            ResultSet res =stmt.executeQuery("SELECT benutzername , passwort ,Büropersonal_rolle FROM Büropersonal");
             while(res.next()){
                 String s1 = res.getString("Benutzername");
                 String s2 = res.getString("Passwort");
                 if(s1.equals(benutzername) && s2.equals(passwort)) {
+                    rolle = res.getString("Büropersonal_rolle");
                     return true;
                 }
             }
@@ -248,13 +250,13 @@ public class Database {
     }
 
     public static void DeleteBüroPersonalFromDb(BüroPersonal büroPersonal){
-        String sql = "DELETE FROM Büropersonal WHERE Büropersonal_rolle = ?";
+        String sql = "DELETE FROM Büropersonal WHERE Büropersonal_name = ?";
 
         try (
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // set the corresponding param
-            pstmt.setString(1, büroPersonal.getRolle());
+            pstmt.setString(1, büroPersonal.getName());
             // execute the delete statement
             pstmt.executeUpdate();
 
