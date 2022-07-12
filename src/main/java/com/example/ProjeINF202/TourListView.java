@@ -56,13 +56,7 @@ public class TourListView extends ListCell<TourInformationen> {
 
     }
 
-    @FXML
-    void OnClickedButtonLösche(ActionEvent event) {
-
-        Database.DeleteTourFromDb(this.getItem());
-        this.updateItem(null,true);
-    }
-
+   
 
 
     @Override
