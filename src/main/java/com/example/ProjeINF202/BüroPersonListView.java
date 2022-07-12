@@ -37,9 +37,18 @@ public class BüroPersonListView extends ListCell<BüroPersonal> {
 
     @FXML
     private Button MehrButton;
+    @FXML
+    private Label ErrorMessageLabel;
 
     @FXML
     void OnClickedmehrButton(ActionEvent event) throws IOException {
+
+        if(Database.rolle.equals("Reiseveranstalter")){
+            ErrorMessageLabel.setText("Sie haben keine Erlaubnis  ");
+            return ;
+        }else{
+
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MehrBüroPersonalInfo.fxml"));
         root = (Parent)fxmlLoader.load();
         MehrBüroPersonalInfoController controller = fxmlLoader.<MehrBüroPersonalInfoController>getController();
@@ -48,8 +57,8 @@ public class BüroPersonListView extends ListCell<BüroPersonal> {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+        }
     }
-
 
     @Override
     protected void updateItem(BüroPersonal büropersonal, boolean empty) {

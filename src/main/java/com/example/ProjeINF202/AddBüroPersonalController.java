@@ -69,10 +69,10 @@ public class AddBüroPersonalController {
     }
     @FXML
     void OnClickedButtonSave(ActionEvent event) throws IOException {
-       /* if(Database.rolle !="IT-Manager"){
-            ErrorMessageLabel.setText("yetkili değilsin ");
+        if(Database.rolle.equals("Reiseveranstalter")){
+            ErrorMessageLabel.setText("Sie haben keine Erlaubnis  ");
             return ;
-        } */
+        }
 
         if(tc_field.getText().isEmpty() || name_field.getText().isEmpty() || vorname_field.getText().isEmpty() ||
            telefonnum_field.getText().isEmpty() || adresse_field.getText().isEmpty() || email_field.getText().isEmpty()

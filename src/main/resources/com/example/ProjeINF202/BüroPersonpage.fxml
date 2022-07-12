@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ProjeINF202.BüroPersonController">
+<AnchorPane prefHeight="428.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ProjeINF202.BüroPersonController">
    <children>
       <Pane layoutX="-1.0" prefHeight="93.0" prefWidth="600.0">
          <children>
@@ -18,7 +18,7 @@
             </Label>
          </children>
       </Pane>
-      <ListView fx:id="BüropersonalList" layoutY="93.0" prefHeight="200.0" prefWidth="600.0" />
+      <ListView fx:id="BüropersonalList" layoutY="93.0" prefHeight="210.0" prefWidth="619.0" />
       <Button fx:id="btnupdate" layoutX="505.0" layoutY="327.0" mnemonicParsing="false" text="Update" textFill="#f8955b">
          <font>
             <Font name="Arial Bold" size="14.0" />
@@ -39,6 +39,9 @@
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <Label fx:id="ErrorMessageLabel" layoutX="153.0" layoutY="310.0" prefHeight="17.0" prefWidth="263.0" textAlignment="CENTER" textFill="#fc0101" />
+      <Label fx:id="ErrorMessageLabel" layoutX="153.0" layoutY="310.0" prefHeight="17.0" prefWidth="263.0" textAlignment="CENTER" textFill="#fc0101">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font></Label>
    </children>
 </AnchorPane>

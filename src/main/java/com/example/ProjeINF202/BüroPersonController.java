@@ -84,11 +84,14 @@ public class BüroPersonController implements Initializable {
     @FXML
     void OnbtnLöschenCliecked(ActionEvent event) {
 
-
+        if(Database.rolle.equals("Reiseveranstalter")){
+            ErrorMessageLabel.setText("Sie haben keine Erlaubnis  ");
+            return ;
+        }else{
             Database.DeleteBüroPersonalFromDb(BüropersonalList.getSelectionModel().getSelectedItem());
             BüropersonalList.getItems().remove(BüropersonalList.getSelectionModel().getSelectedItem());
 
-
+        }
     }
 
 
