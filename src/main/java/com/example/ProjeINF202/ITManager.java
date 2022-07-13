@@ -32,12 +32,7 @@ public class ITManager extends Person {
     public void erstellenkonto(){
 
     }
-    public void update(){
 
-    }
-    public void delete(){
-
-    }
     public void control(){
 
     }

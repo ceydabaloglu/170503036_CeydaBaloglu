@@ -352,5 +352,35 @@ public class Database {
         return null;
     }
 
+    public static void UpdateKunde (Kunde kundeInfo){
+
+            String sql = "UPDATE Kunde SET  TC_nummer = ? , "
+                    + "Telefonnummer = ? , "
+                    + "Name = ? , "
+                    + "Vorname = ? , "
+                    + "Adresse = ? , "
+                    + "Email = ? , "
+                    + "KundeAge = ? "
+                    + "WHERE Kundennummer = ?";
+
+            try (
+                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+                pstmt.setInt(1,kundeInfo.gettc_no());
+                pstmt.setInt(2,kundeInfo.getTelefonnummer());
+                pstmt.setString(3, kundeInfo.getName());
+                pstmt.setString(4, kundeInfo.getVorname());
+                pstmt.setString(5, kundeInfo.getAdress());
+                pstmt.setString(6, kundeInfo.getEmail());
+                pstmt.setInt(7, kundeInfo.getAlter());
+                pstmt.setInt(8, kundeInfo.getKundennummer());
+                // update
+                pstmt.executeUpdate();
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+
+    }
+
 
 }

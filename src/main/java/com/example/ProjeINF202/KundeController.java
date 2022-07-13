@@ -89,7 +89,18 @@ public class KundeController  implements Initializable {
         }
     }
 
+    @FXML
+    void OnClickedButtonUpdate(ActionEvent event) throws  IOException{
 
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddKunde.fxml"));
+        root = (Parent)fxmlLoader.load();
+        AddKundeController controller = fxmlLoader.<AddKundeController>getController();
+        controller.setKundeInfo(kundelist.getSelectionModel().getSelectedItem(),true);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 
 }
