@@ -43,8 +43,6 @@ public class KundeListView extends ListCell<Kunde> {
     void OnClickedMoreButton(ActionEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MehrKundeInfo.fxml"));
         root = (Parent)fxmlLoader.load();
-        fxmlLoader.setRoot(this);
-        fxmlLoader.setController(this);
         MehrKundeInfoController controller = fxmlLoader.<MehrKundeInfoController>getController();
         controller.setKundeInfo(kundeInfo);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -91,7 +89,7 @@ public class KundeListView extends ListCell<Kunde> {
                 }
 
             }
-
+            kundeInfo = Kunde;
             KundenoLabel.setText(String.valueOf(Kunde.getKundennummer()));
             NameLabel.setText(String.valueOf(Kunde.getName()));
             VornameLabel.setText(Kunde.getVorname());

@@ -28,6 +28,7 @@ public class Person {
         this.Vorname = vorname;
         this.Email = email;
     }
+
     public void setAll(int tc ,String ad, String n ,String v, int tel, String e , int al){
         this.tc_no = tc;
         this.Adress = ad;

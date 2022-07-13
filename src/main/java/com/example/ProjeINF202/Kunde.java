@@ -10,7 +10,7 @@ public class Kunde extends Person {
 
     }
 
-    public Kunde(int kundennummer,String name, String vorname, String email){
+    public Kunde(int kundennummer,int tc_no,int telefonnumber,String name, String vorname,String adress, String email,int alter){
 
         super(name, vorname, email);
         Kundennummer = kundennummer;

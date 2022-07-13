@@ -81,7 +81,7 @@ public class BüroPersonListView extends ListCell<BüroPersonal> {
                 }
 
             }
-
+            büroPersonalInformationen = büropersonal;
             NameLabel.setText((büropersonal.getName()));
             VornameLabel.setText((büropersonal.getVorname()));
             EmailLabel.setText(büropersonal.getEmail());

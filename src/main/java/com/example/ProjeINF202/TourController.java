@@ -9,10 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -86,10 +83,16 @@ public class TourController implements Initializable {
 
     @FXML
     void OnClicekedButtonLöschen(ActionEvent event) {
-
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Warnung Operation");
+        alert.setHeaderText("Löschen Sie diese Tourinformationen");
+        //alert.setContentText("Wenden Sie sich dazu an den Administrator!");
+        if(alert.showAndWait().get() == ButtonType.OK)   {
         Database.DeleteTourFromDb(Tourlist.getSelectionModel().getSelectedItem());
         Tourlist.getItems().remove(Tourlist.getSelectionModel().getSelectedItem());
+        }
     }
+
 
 
     @FXML

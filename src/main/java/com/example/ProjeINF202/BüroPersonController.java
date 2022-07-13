@@ -73,11 +73,23 @@ public class BüroPersonController implements Initializable {
     }
     @FXML
     void OnbtnAddCliecked(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(AddBüroPersonalController.class.getResource("AddBüroPersonal.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if(Database.rolle.equals("Reiseveranstalter")){
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Warnung");
+            alert.setHeaderText("Sie sind keine Adminuser!");
+            alert.setContentText("Wenden Sie sich dazu an den Administrator!");
+            if(alert.showAndWait().get() == ButtonType.OK)   {
+
+            }
+        }else{
+            root = FXMLLoader.load(AddBüroPersonalController.class.getResource("AddBüroPersonal.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+
+
 
     }
 

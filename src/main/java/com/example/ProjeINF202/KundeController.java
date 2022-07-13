@@ -3,17 +3,16 @@ package com.example.ProjeINF202;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -80,8 +79,17 @@ public class KundeController  implements Initializable {
 
     @FXML
     void OnClickedButtonLöschen(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Warnung");
+        alert.setHeaderText("Löschen Sie diese Kunde Informationen");
+        //alert.setContentText("Wenden Sie sich dazu an den Administrator!");
+        if(alert.showAndWait().get() == ButtonType.OK)   {
         Database.DeleteKundeFromDb(kundelist.getSelectionModel().getSelectedItem());
         kundelist.getItems().remove(kundelist.getSelectionModel().getSelectedItem());
+        }
     }
+
+
+
 
 }

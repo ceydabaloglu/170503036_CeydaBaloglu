@@ -55,7 +55,7 @@ public class MehrBüroPersonalInfoController  implements Initializable {
 
     @FXML
     void OnClickedzurückbutton(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(homeController.class.getResource("Tourenview.fxml"));
+        root = FXMLLoader.load(homeController.class.getResource("BüroPersonpage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

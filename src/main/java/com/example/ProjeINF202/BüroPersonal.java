@@ -3,7 +3,7 @@ package com.example.ProjeINF202;
 public class BüroPersonal extends Person {
 
 
-    public BüroPersonal(int tc_no, String name, String vorname, int telefonnumber, String adress, String email, int alter, String rolle, String benutzername, String password) {
+    public BüroPersonal(int tc_no, String name, String vorname, int telefonnumber, String adress, String email, int alter, String rolle, String benutzername,String password) {
         super(tc_no, name, vorname, telefonnumber, adress, email, alter);
         Rolle = rolle;
         Benutzername = benutzername;
@@ -16,9 +16,12 @@ public class BüroPersonal extends Person {
     }
 
 
+
     protected String Rolle;
     protected String Benutzername;
     protected String Passwort;
+
+
 
 
     public String getRolle() {

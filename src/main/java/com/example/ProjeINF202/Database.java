@@ -82,11 +82,19 @@ public class Database {
             Statement stmt = conn.createStatement();
             ResultSet res =stmt.executeQuery("SELECT Büropersonal_name ,  Büropersonal_vorname ,Büropersonal_email FROM Büropersonal");
             while(res.next()){
-                String s = res.getString("Büropersonal_name");
-                String s1 =res.getString("Büropersonal_vorname");
-                String s2 =res.getString("Büropersonal_email");
+                //String s = res.getString("Büropersonal_rolle");
+                //String s1 = res.getString("benutzername");
+                //Büropersonal_rolle,benutzername
+                //, Büropersonal_adresse,Büropersonal_tc,Büropersonal_alter,Büropersonal_telefonnum
+                String s3 = res.getString("Büropersonal_name");
+                String s4 =res.getString("Büropersonal_vorname");
+                String s5 =res.getString("Büropersonal_email");
+                //String s6 =res.getString("Büropersonal_adresse");
+                //int s7 =res.getInt("Büropersonal_tc");
+                //int s8 =res.getInt("Büropersonal_alter");
+                //int s9 =res.getInt("Büropersonal_telefonnum");
 
-                arr.add(new BüroPersonal(s ,s1 ,s2));
+                arr.add(new BüroPersonal(s3,s4,s5));
             }
             return arr;
         }catch (SQLException e){
@@ -100,14 +108,19 @@ public class Database {
         ObservableList<Kunde> arr = FXCollections.observableArrayList();
         try{
             Statement stmt = conn.createStatement();
-            ResultSet res =stmt.executeQuery("SELECT Kundennummer, Name ,  Vorname ,Email FROM Kunde");
+            ResultSet res =stmt.executeQuery("SELECT Kundennummer, TC_nummer,Telefonnummer,Name ,  Vorname ,Adresse,Email ,KundeAge FROM Kunde");
             while(res.next()){
                 int s = res.getInt("Kundennummer");
-                String s1 =res.getString("Name");
-                String s2 =res.getString("Vorname");
-                String s3 =res.getString("Email");
+                int s1 =res.getInt("TC_nummer");
+                int s2 =res.getInt("Telefonnummer");
+                String s3 =res.getString("Name");
+                String s4 =res.getString("Vorname");
+                String s5 =res.getString("Adresse");
+                String s6 =res.getString("Email");
+                int s7 =res.getInt("KundeAge");
 
-                arr.add(new Kunde(s,s1 ,s2,s3));
+
+                arr.add(new Kunde(s,s1 ,s2,s3,s4,s5,s6,s7));
             }
             return arr;
         }catch (SQLException e){
@@ -188,6 +201,8 @@ public class Database {
             pstmt.setString(7, KundeInfo.getEmail());
 
             pstmt.setInt(8, KundeInfo.getAlter());
+
+
 
 
 

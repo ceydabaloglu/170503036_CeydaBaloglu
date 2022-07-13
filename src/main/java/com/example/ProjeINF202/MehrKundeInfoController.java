@@ -54,18 +54,11 @@ public class MehrKundeInfoController implements Initializable {
     @FXML
     private GridPane GridPane;
 
-    @FXML
-    void OnClickedButtonZurück(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(homeController.class.getResource("Kundepage.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
 
-    }
 
-    public void setKundeInfo(Kunde Kunde){
-        kundeInfo = Kunde;
+    public void setKundeInfo(Kunde kunde){
+
+        kundeInfo = kunde;
     }
 
     @Override
@@ -84,5 +77,15 @@ public class MehrKundeInfoController implements Initializable {
 
 
         });
+    }
+
+    @FXML
+    void OnClickedButtonZurück(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(homeController.class.getResource("Kundepage.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
     }
 }
