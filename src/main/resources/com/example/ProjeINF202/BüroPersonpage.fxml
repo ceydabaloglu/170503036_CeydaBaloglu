@@ -19,7 +19,7 @@
          </children>
       </Pane>
       <ListView fx:id="BüropersonalList" layoutY="93.0" prefHeight="210.0" prefWidth="619.0" />
-      <Button fx:id="btnupdate" layoutX="505.0" layoutY="327.0" mnemonicParsing="false" text="Update" textFill="#f8955b">
+      <Button fx:id="btnupdate" layoutX="505.0" layoutY="327.0" mnemonicParsing="false" onAction="#OnbtnUpdateCliecked" text="Update" textFill="#f8955b">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>

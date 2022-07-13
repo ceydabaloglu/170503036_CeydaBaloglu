@@ -1,8 +1,10 @@
 package com.example.ProjeINF202;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,12 +14,16 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class AddBüroPersonalController {
+public class AddBüroPersonalController  implements Initializable {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private BüroPersonal büroPersonalInfo;
+    private boolean IsUpdate = false;
 
     @FXML
     private Button ButtonZurück;
@@ -80,20 +86,33 @@ public class AddBüroPersonalController {
 
             ErrorMessageLabel.setText("Fehlende Informationen");
         }else {
+            if(IsUpdate == true){
+                büroPersonalInfo.setAll(Integer.valueOf(tc_field.getText()) ,
+                        adresse_field.getText(),
+                        name_field.getText(),
+                        vorname_field.getText(),
+                        Integer.valueOf(telefonnum_field.getText()),
+                        email_field.getText() ,
+                        Integer.valueOf(alter_field.getText()));
+                Database.UpdateBüroPersonal(büroPersonalInfo);
 
-        BüroPersonal büroPersonal = new BüroPersonal(
-                benutzer_rolle_field.getText(),
-                benutzername_field.getText(),
-                passwort_field.getText(),
-                name_field.getText(),
-                vorname_field.getText(),
-                email_field.getText(),
-                adresse_field.getText(),
-                Integer.valueOf(tc_field.getText()),
-                Integer.valueOf(alter_field.getText()),
-                Integer.valueOf(telefonnum_field.getText()));
+            }else{
+                BüroPersonal büroPersonal = new BüroPersonal(
+                        benutzer_rolle_field.getText(),
+                        benutzername_field.getText(),
+                        passwort_field.getText(),
+                        name_field.getText(),
+                        vorname_field.getText(),
+                        email_field.getText(),
+                        adresse_field.getText(),
+                        Integer.valueOf(tc_field.getText()),
+                        Integer.valueOf(alter_field.getText()),
+                        Integer.valueOf(telefonnum_field.getText()));
 
-        Database.CreateNewBüroPersonalToDb(büroPersonal);
+                Database.CreateNewBüroPersonalToDb(büroPersonal);
+            }
+
+
 
         root = FXMLLoader.load(BüroPersonController.class.getResource("BüroPersonpage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -101,6 +120,34 @@ public class AddBüroPersonalController {
         stage.setScene(scene);
         stage.show();
         }
+    }
+
+    public void setBüroPersonInfo(BüroPersonal büroPersonal,boolean Isupdate){
+        büroPersonalInfo = büroPersonal;
+        IsUpdate = Isupdate;
+
+    }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        Platform.runLater(() -> {
+            if(IsUpdate){
+                benutzer_rolle_field.setText((büroPersonalInfo.getRolle()));
+                benutzername_field.setText((büroPersonalInfo.getBenutzername()));
+                passwort_field.setText(büroPersonalInfo.getPasswort());
+                name_field.setText(büroPersonalInfo.getName());
+                vorname_field.setText(büroPersonalInfo.getVorname());
+                email_field.setText(büroPersonalInfo.getEmail());
+                adresse_field.setText(büroPersonalInfo.getAdress());
+                tc_field.setText(String.valueOf(büroPersonalInfo.gettc_no()));
+                telefonnum_field.setText(String.valueOf(büroPersonalInfo.getTelefonnummer()));
+                alter_field.setText(String.valueOf(büroPersonalInfo.getAlter()));
+
+            }
+
+
+
+        });
     }
 
 }

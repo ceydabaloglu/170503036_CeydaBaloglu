@@ -105,6 +105,18 @@ public class BüroPersonController implements Initializable {
 
         }
     }
+    @FXML
+    void OnbtnUpdateCliecked(ActionEvent event) throws IOException {
 
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddBüroPersonal.fxml"));
+        root = (Parent)fxmlLoader.load();
+        AddBüroPersonalController controller = fxmlLoader.<AddBüroPersonalController>getController();
+        controller.setBüroPersonInfo(BüropersonalList.getSelectionModel().getSelectedItem(),true);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
 
 }

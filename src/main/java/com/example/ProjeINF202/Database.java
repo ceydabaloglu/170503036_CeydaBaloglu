@@ -382,5 +382,39 @@ public class Database {
 
     }
 
+    public static void UpdateBüroPersonal (BüroPersonal büropersonalInfo){
+
+        String sql = "UPDATE BüroPersonal SET  Büropersonal_rolle = ? , "
+                + "passwort = ? , "
+                + "Büropersonal_name = ? , "
+                + "Büropersonal_vorname = ? , "
+                + "Büropersonal_email = ? , "
+                + "Büropersonal_adresse = ? , "
+                + "Büropersonal_tc = ? , "
+                + "Büropersonal_alter = ? , "
+                + "Büropersonal_telefonnum = ? "
+                + "WHERE benutzername = ?";
+
+        try (
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, büropersonalInfo.getRolle());
+            pstmt.setString(2,büropersonalInfo.getPasswort());
+            pstmt.setString(3, büropersonalInfo.getName());
+            pstmt.setString(4, büropersonalInfo.getVorname());
+            pstmt.setString(5, büropersonalInfo.getEmail());
+            pstmt.setString(6, büropersonalInfo.getAdress());
+            pstmt.setInt(7, büropersonalInfo.gettc_no());
+            pstmt.setInt(8, büropersonalInfo.getAlter());
+            pstmt.setInt(9, büropersonalInfo.getTelefonnummer());
+            pstmt.setString(10, büropersonalInfo.getBenutzername());
+            // update
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
 
 }
