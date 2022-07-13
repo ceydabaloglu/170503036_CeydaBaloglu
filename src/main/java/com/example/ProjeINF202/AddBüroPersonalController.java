@@ -82,16 +82,16 @@ public class AddBüroPersonalController {
         }else {
 
         BüroPersonal büroPersonal = new BüroPersonal(
-                Integer.valueOf(tc_field.getText()),
-                name_field.getText(),
-                vorname_field.getText(),
-                Integer.valueOf(telefonnum_field.getText()),
-                adresse_field.getText(),
-                email_field.getText(),
-                Integer.valueOf(alter_field.getText()),
                 benutzer_rolle_field.getText(),
                 benutzername_field.getText(),
-                passwort_field.getText());
+                passwort_field.getText(),
+                name_field.getText(),
+                vorname_field.getText(),
+                email_field.getText(),
+                adresse_field.getText(),
+                Integer.valueOf(tc_field.getText()),
+                Integer.valueOf(alter_field.getText()),
+                Integer.valueOf(telefonnum_field.getText()));
 
         Database.CreateNewBüroPersonalToDb(büroPersonal);
 

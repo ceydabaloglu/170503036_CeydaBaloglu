@@ -54,20 +54,6 @@ public class KundeListView extends ListCell<Kunde> {
 
 
 
-  /*  @FXML
-    void OnClickedMehrButton(ActionEvent event)  throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MehrKundeInfo.fxml"));
-        root = (Parent)fxmlLoader.load();
-        MehrKundeInfoController controller = fxmlLoader.<MehrKundeInfoController>getController();
-        controller.setKundeInfo(kundeInfo);
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }*/
-
-
-
     @Override
     protected void updateItem(Kunde Kunde, boolean empty) {
         super.updateItem(Kunde, empty);

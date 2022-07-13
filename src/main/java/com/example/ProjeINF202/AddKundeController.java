@@ -64,14 +64,15 @@ public class AddKundeController {
 
                 }else{
                         Kunde KundeInfo = new Kunde(
+                                Integer.valueOf(kundennummer_field.getText()),
                                 Integer.valueOf(tc_field.getText()) ,
+                                Integer.valueOf(telefonnummer_field.getText()),
                                 name_field.getText(),
                                 vorname_field.getText(),
-                                Integer.valueOf(telefonnummer_field.getText()),
                                 adresse_field.getText(),
                                 email_field.getText() ,
-                                Integer.valueOf(alter_field.getText()),
-                                Integer.valueOf(kundennummer_field.getText()));
+                                Integer.valueOf(alter_field.getText())
+                                );
                 Database.CreateNewKundeToDb(KundeInfo);
 
                 root = FXMLLoader.load(KundeController.class.getResource("Kundepage.fxml"));

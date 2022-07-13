@@ -8,60 +8,97 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ProjeINF202.MehrTourInfoController">
    <top>
-      <Pane prefHeight="38.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="38.0" prefWidth="600.0" style="-fx-background-color: #f8955b#f8955b #f8955b#f8955b;" BorderPane.alignment="CENTER" />
    </top>
    <bottom>
-      <Pane prefHeight="38.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="38.0" prefWidth="600.0" style="-fx-background-color: #f8955b#f8955b #f8955b#f8955b;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="ButtonZurück" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#OnClickedButtonZurück" text="Zurück" />
-            <Button fx:id="ButtonSave" layoutX="555.0" layoutY="7.0" mnemonicParsing="false" onAction="#OnClickedButtonSave" text="Save" />
+            <Button fx:id="ButtonZurück" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#OnClickedButtonZurück" text="Zurück" textFill="#cd8322">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="ButtonSave" layoutX="555.0" layoutY="7.0" mnemonicParsing="false" onAction="#OnClickedButtonSave" text="Sparen" textFill="#cd8322">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font></Button>
          </children></Pane>
    </bottom>
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <ListView fx:id="KundeInfoList" layoutX="62.0" layoutY="176.0" prefHeight="200.0" prefWidth="550.0" />
-            <GridPane fx:id="GridPane" layoutX="66.0" layoutY="34.0" prefHeight="90.0" prefWidth="546.0">
+            <GridPane fx:id="GridPane" layoutX="7.0" layoutY="34.0" prefHeight="90.0" prefWidth="642.0">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="68.0" minWidth="10.0" prefWidth="54.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="90.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="72.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="92.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="114.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="10.0" prefWidth="42.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="78.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="81.0" minWidth="10.0" prefWidth="63.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="82.0" minWidth="10.0" prefWidth="64.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Label" />
-                  <Label fx:id="IdLabel" text="Label" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="1" />
-                  <Label fx:id="NameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="2" />
-                  <Label fx:id="ZeitraumLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="3" />
-                  <Label fx:id="KapazitatLabel" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="4" />
-                  <Label fx:id="TransportmittelnLabel" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="5" />
-                  <Label fx:id="PreisLabel" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="6" />
-                  <Label fx:id="TagesablaufLabel" text="Label" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="7" />
-                  <Label fx:id="HotelLabel" text="Label" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-                  <Label text="Label" GridPane.columnIndex="8" />
-                  <Label fx:id="OrtLabel" text="Label" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                  <Label text="ID">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="IdLabel" GridPane.rowIndex="1" />
+                  <Label text="TourName" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="NameLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Zeitraum" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="ZeitraumLabel" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label text="Kapazität" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="KapazitatLabel" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label text="Transportmitteln" GridPane.columnIndex="4">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="TransportmittelnLabel" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Label text="Preis" GridPane.columnIndex="5">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="PreisLabel" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Label text="Tagesablauf" GridPane.columnIndex="6">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font></Label>
+                  <Label fx:id="TagesablaufLabel" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <Label text="Hotel" GridPane.columnIndex="7">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="HotelLabel" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                  <Label text="Ort" GridPane.columnIndex="8">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="OrtLabel" GridPane.columnIndex="8" GridPane.rowIndex="1" />
                </children>
             </GridPane>
-            <Button fx:id="AddKundeButton" layoutX="282.0" layoutY="140.0" mnemonicParsing="false" onAction="#OnClickedButtonAddKunde" text="Add Kunde" />
+            <Button fx:id="AddKundeButton" layoutX="282.0" layoutY="140.0" mnemonicParsing="false" onAction="#OnClickedButtonAddKunde" text="Add Kunde" textFill="#cd8322">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font></Button>
          </children>
       </Pane>
    </center>

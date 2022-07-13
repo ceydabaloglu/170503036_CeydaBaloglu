@@ -80,21 +80,20 @@ public class Database {
         ObservableList<BüroPersonal> arr = FXCollections.observableArrayList();
         try{
             Statement stmt = conn.createStatement();
-            ResultSet res =stmt.executeQuery("SELECT Büropersonal_name ,  Büropersonal_vorname ,Büropersonal_email FROM Büropersonal");
+            ResultSet res =stmt.executeQuery("SELECT Büropersonal_rolle,benutzername,passwort,Büropersonal_name ,  Büropersonal_vorname ,Büropersonal_email , Büropersonal_adresse,Büropersonal_tc,Büropersonal_alter,Büropersonal_telefonnum FROM Büropersonal");
             while(res.next()){
-                //String s = res.getString("Büropersonal_rolle");
-                //String s1 = res.getString("benutzername");
-                //Büropersonal_rolle,benutzername
-                //, Büropersonal_adresse,Büropersonal_tc,Büropersonal_alter,Büropersonal_telefonnum
+                String s = res.getString("Büropersonal_rolle");
+                String s1 = res.getString("benutzername");
+                String s2 =res.getString("passwort");
                 String s3 = res.getString("Büropersonal_name");
                 String s4 =res.getString("Büropersonal_vorname");
                 String s5 =res.getString("Büropersonal_email");
-                //String s6 =res.getString("Büropersonal_adresse");
-                //int s7 =res.getInt("Büropersonal_tc");
-                //int s8 =res.getInt("Büropersonal_alter");
-                //int s9 =res.getInt("Büropersonal_telefonnum");
+                String s6 =res.getString("Büropersonal_adresse");
+                int s7 =res.getInt("Büropersonal_tc");
+                int s8 =res.getInt("Büropersonal_alter");
+                int s9 =res.getInt("Büropersonal_telefonnum");
 
-                arr.add(new BüroPersonal(s3,s4,s5));
+                arr.add(new BüroPersonal(s,s1,s2,s3,s4,s5,s6,s7,s8,s9));
             }
             return arr;
         }catch (SQLException e){
@@ -279,4 +278,79 @@ public class Database {
             System.out.println(e.getMessage());
         }
     }
+    public static void addTourKundeInfo (Integer TourId, Integer Kundennummer){
+
+       String sql = "INSERT INTO TourInfoKunde (TourId,Kundennummer ) VALUES(?,?)";
+        try (
+
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+
+            pstmt.setInt(1,TourId);
+
+            pstmt.setInt(2, Kundennummer);
+
+
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static ObservableList<Kunde> getKundenVonTour(int TourId){
+
+        ObservableList<Kunde> arr = FXCollections.observableArrayList();
+        String sql = "SELECT Kundennummer "
+                + "FROM TourInfoKunde WHERE TourId = ?";
+
+        try (
+                PreparedStatement pstmt  = conn.prepareStatement(sql)){
+
+            // set the value
+            pstmt.setInt(1,TourId);
+            //
+            ResultSet rs  = pstmt.executeQuery();
+
+            // loop through the result set
+            while (rs.next()) {
+                Kunde x = getKundefromDb(rs.getInt("Kundennummer"));
+                arr.add(x);
+            }
+            return arr;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    public static Kunde getKundefromDb(int Kundennummer){
+        String sql = "SELECT Kundennummer, TC_nummer,Telefonnummer,Name ,  Vorname ,Adresse,Email ,KundeAge FROM Kunde WHERE Kundennummer = ?";
+
+        try (
+                PreparedStatement pstmt  = conn.prepareStatement(sql)){
+
+            // set the value
+            pstmt.setDouble(1,Kundennummer);
+            //
+            ResultSet res  = pstmt.executeQuery();
+
+            // loop through the result set
+            while (res.next()) {
+                int s = res.getInt("Kundennummer");
+                int s1 =res.getInt("TC_nummer");
+                int s2 =res.getInt("Telefonnummer");
+                String s3 =res.getString("Name");
+                String s4 =res.getString("Vorname");
+                String s5 =res.getString("Adresse");
+                String s6 =res.getString("Email");
+                int s7 =res.getInt("KundeAge");
+
+                return new Kunde(s,s1 ,s2,s3,s4,s5,s6,s7);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+        return null;
+    }
+
+
 }

@@ -48,7 +48,7 @@ public class MehrTourInfoController implements Initializable {
     private Label KapazitatLabel;
 
     @FXML
-    private ListView<?> KundeInfoList;
+    private ListView<Kunde> KundeInfoList;
 
     @FXML
     private Label NameLabel;
@@ -71,9 +71,22 @@ public class MehrTourInfoController implements Initializable {
     @FXML
     private GridPane GridPane;
 
-    @FXML
-    void OnClickedButtonAddKunde(ActionEvent event) {
+    private ObservableList<Kunde> Observablekundelist ;
 
+    public MehrTourInfoController (){
+
+    }
+
+    @FXML
+    void OnClickedButtonAddKunde(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddKundetoTour.fxml"));
+        root = (Parent)fxmlLoader.load();
+        AddKundetoTourController controller = fxmlLoader.<AddKundetoTourController>getController();
+        controller.setTourInfo(tourInfo);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -112,7 +125,12 @@ public class MehrTourInfoController implements Initializable {
             ZeitraumLabel.setText(String.valueOf(tourInfo.getZeitraum()));
             TransportmittelnLabel.setText(tourInfo.getTransportmittel());
 
-
+            Observablekundelist = FXCollections.observableArrayList();
+            for (Kunde kunde : Database.getKundenVonTour(tourInfo.getId())) {
+                Observablekundelist.add(kunde);
+            }
+            KundeInfoList.setItems(Observablekundelist);
+            KundeInfoList.setCellFactory(KundeListView -> new KundeListView());
         });
 
 

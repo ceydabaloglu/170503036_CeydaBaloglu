@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ProjeINF202.AddKundetoTourController">
    <top>
       <Pane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #f8955b#f8955b;" BorderPane.alignment="CENTER" />
    </top>
@@ -15,6 +14,11 @@
       <Pane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #f8955b#f8955b;" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="ButtonAdd" layoutX="487.0" layoutY="13.0" mnemonicParsing="false" onAction="#OnClickedButtonAdd" text="Add" textFill="#e16a25">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonZurück" layoutX="36.0" layoutY="13.0" mnemonicParsing="false" onAction="#OnClickedButtonZurück" text="Zurück" textFill="#e16a25">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
