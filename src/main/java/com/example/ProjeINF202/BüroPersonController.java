@@ -97,16 +97,38 @@ public class BüroPersonController implements Initializable {
     void OnbtnLöschenCliecked(ActionEvent event) {
 
         if(Database.rolle.equals("Reiseveranstalter")){
-            ErrorMessageLabel.setText("Sie haben keine Erlaubnis  ");
-            return ;
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Warnung");
+            alert.setHeaderText("Sie sind keine Adminuser!");
+            alert.setContentText("Wenden Sie sich dazu an den Administrator!");
+            if(alert.showAndWait().get() == ButtonType.OK)   {
+
+            }
         }else{
-            Database.DeleteBüroPersonalFromDb(BüropersonalList.getSelectionModel().getSelectedItem());
-            BüropersonalList.getItems().remove(BüropersonalList.getSelectionModel().getSelectedItem());
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Warnung");
+            alert.setHeaderText("Löschen Sie diese Kunde Informationen");
+            //alert.setContentText("Wenden Sie sich dazu an den Administrator!");
+            if(alert.showAndWait().get() == ButtonType.OK)   {
+                Database.DeleteBüroPersonalFromDb(BüropersonalList.getSelectionModel().getSelectedItem());
+                BüropersonalList.getItems().remove(BüropersonalList.getSelectionModel().getSelectedItem());
+            }
+            //Database.DeleteBüroPersonalFromDb(BüropersonalList.getSelectionModel().getSelectedItem());
+            //BüropersonalList.getItems().remove(BüropersonalList.getSelectionModel().getSelectedItem());
 
         }
     }
     @FXML
     void OnbtnUpdateCliecked(ActionEvent event) throws IOException {
+        if(Database.rolle.equals("Reiseveranstalter")){
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Warnung");
+            alert.setHeaderText("Sie sind keine Adminuser!");
+            alert.setContentText("Wenden Sie sich dazu an den Administrator!");
+            if(alert.showAndWait().get() == ButtonType.OK)   {
+
+            }
+        }else{
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddBüroPersonal.fxml"));
         root = (Parent)fxmlLoader.load();
@@ -116,7 +138,7 @@ public class BüroPersonController implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
+        }
     }
 
 }

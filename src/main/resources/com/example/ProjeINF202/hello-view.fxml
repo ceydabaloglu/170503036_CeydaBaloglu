@@ -49,15 +49,7 @@
          <children>
             <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="109.0" prefWidth="301.0">
                <children>
-                  <Button mnemonicParsing="false" style="-fx-background-color: 000;">
-                     <graphic>
-                        <ImageView fx:id="btnClose" fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/close_page.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
+                  <Button mnemonicParsing="false" style="-fx-background-color: 000;" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="301.0">

@@ -321,6 +321,8 @@ public class Database {
             return null;
         }
     }
+
+
     public static Kunde getKundefromDb(int Kundennummer){
         String sql = "SELECT Kundennummer, TC_nummer,Telefonnummer,Name ,  Vorname ,Adresse,Email ,KundeAge FROM Kunde WHERE Kundennummer = ?";
 
