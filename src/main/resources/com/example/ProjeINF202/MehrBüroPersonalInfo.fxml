@@ -11,10 +11,10 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ProjeINF202.MehrBüroPersonalInfoController">
    <top>
-      <Pane prefHeight="50.0" prefWidth="673.0" style="-fx-background-color: #f8955b#f8955b;" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="94.0" prefWidth="755.0" style="-fx-background-color: #f8955b#f8955b;" BorderPane.alignment="CENTER" />
    </top>
    <bottom>
-      <Pane prefHeight="50.0" prefWidth="673.0" style="-fx-background-color: #f8955b#f8955b #f8955b#f8955b;" BorderPane.alignment="CENTER">
+      <Pane prefHeight="116.0" prefWidth="755.0" style="-fx-background-color: #f8955b#f8955b #f8955b#f8955b;" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="zurückbutton" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#OnClickedzurückbutton" text="Zurück" textFill="#c36332">
                <font>
@@ -25,7 +25,7 @@
       </Pane>
    </bottom>
    <center>
-      <GridPane prefHeight="260.0" prefWidth="755.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="293.0" prefWidth="755.0" BorderPane.alignment="CENTER">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="75.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="10.0" prefWidth="90.0" />
@@ -38,8 +38,8 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="175.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="258.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="245.0" minHeight="10.0" prefHeight="181.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="177.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label text="Rolle" />

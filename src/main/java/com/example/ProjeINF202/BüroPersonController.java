@@ -107,7 +107,7 @@ public class BüroPersonController implements Initializable {
         }else{
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Warnung");
-            alert.setHeaderText("Löschen Sie diese Kunde Informationen");
+            alert.setHeaderText("Löschen Sie diese Büro Personal Informationen");
             //alert.setContentText("Wenden Sie sich dazu an den Administrator!");
             if(alert.showAndWait().get() == ButtonType.OK)   {
                 Database.DeleteBüroPersonalFromDb(BüropersonalList.getSelectionModel().getSelectedItem());

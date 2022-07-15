@@ -22,9 +22,11 @@ public class ITManager extends Person {
         Passwort = p;
     }
     public String getRolle(){
+
         return rolle;
     }
     public String getBenutzername(){
+
         return Benutzername;
     }
 
